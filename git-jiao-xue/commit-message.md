@@ -8,9 +8,7 @@ Commit Message為推送紀錄的訊息，請務必確實填寫每次程式的更
 
 目前 Android Team 暫定是 Angular 風格、iOS Team 尚未訂定。
 
-[https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md\#-commit-message-guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)
-
-## Angular 風格
+## Angular 風格 \([Link](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)\)
 
 ```text
 type(scope): subject
