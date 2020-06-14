@@ -4,7 +4,10 @@
 
 ## Git主題 <a id="git-jiao-xue"></a>
 
-* [Untitled](git-jiao-xue/untitled.md)
+* [Git 基本知識](git-jiao-xue/untitled.md)
+* [Git 使用方法](git-jiao-xue/git-shi-yong-fang-fa.md)
+* [Git Flow 開發方式](git-jiao-xue/git-flow-kai-fa-fang-shi.md)
+* [Commit Message](git-jiao-xue/commit-message.md)
 
 ## Coding 101
 
