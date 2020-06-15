@@ -26,7 +26,7 @@ chart.noDataTextColor = .white
 
 接下來要一步步更改外觀
 
-#### 1.關閉圖示 \(在籌碼K一般不使用內建的legend
+### 1.關閉圖示 \(在籌碼K一般不使用內建的legend
 
 ```swift
 chart.legend.enabled = false
@@ -34,7 +34,7 @@ chart.legend.enabled = false
 
 ![](../.gitbook/assets/jie-tu-20200604-xia-wu-2.12.28.png)
 
-#### 2.x軸設定
+### 2.x軸設定
 
 ```swift
 let xAxis = chart.xAxis
@@ -88,7 +88,7 @@ xAxis.axisMinimum = 10
 
 ![](../.gitbook/assets/jie-tu-20200604-xia-wu-3.03.48.png)
 
-#### 3.y軸的設定
+### 3.y軸的設定
 
 依照上面的圖表 我們可以看到 左邊跟右邊都有數字Label
 
