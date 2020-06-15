@@ -13,8 +13,8 @@
 
 * [Classes / Structures?](coding-101/classes-structures.md)
 * [Value / Reference type?](coding-101/value-reference-type.md)
-* [頁面之間的溝通方式](coding-101/ye-mian-zhi-jian-de-gou-tong-fang-shi.md)
-* [ARC回收機制+Retain Cycle](coding-101/arc-hui-shou-ji-zhi-+retain-cycle.md)
+* [物件之間的溝通方式](coding-101/ye-mian-zhi-jian-de-gou-tong-fang-shi.md)
+* [ARC+Retain Cycle](coding-101/arc-hui-shou-ji-zhi-+retain-cycle.md)
 
 ## 工具主題 <a id="ji-ben-gong-ju"></a>
 
@@ -22,11 +22,13 @@
 
 ## 架構主題
 
-* [Untitled](jia-gou-zhu-ti/untitled.md)
+* [MVC](jia-gou-zhu-ti/untitled.md)
 
 ## CodingStyle主題
 
-* [Untitled](codingstyle-zhu-ti/untitled.md)
+* [CodingStyle 規則](codingstyle-zhu-ti/untitled.md)
+* [靜態檢查器](codingstyle-zhu-ti/jing-tai-jian-cha-qi.md)
+* [專案基本規定](codingstyle-zhu-ti/zhuan-an-ji-ben-gui-ding.md)
 
 ## Charts主題 <a id="charts"></a>
 
