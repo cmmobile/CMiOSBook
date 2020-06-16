@@ -81,5 +81,53 @@ description: 在開發過程中，這些工具並不是必要的，但如果你�
   * Git blame \(author\)
   * Caller & Callee
 
+## Postman 使用 \(API 工具\)
+
+基本畫面如下
+
+![](../.gitbook/assets/jie-tu-20200616-shang-wu-9.17.26.png)
+
+公司內部一般會給 SWAG，但你可能有某些參數想要測試，或是你想要調整送出的方法，這時候你可以快速的用 Postman 進行測試。
+
+#### 測試各種不同的 header
+
+![](../.gitbook/assets/jie-tu-20200616-shang-wu-9.28.38.png)
+
+#### 測試各種不同的 body，你也可以在這測不同的 body encoding，新版的連 GraphQL 也可以測
+
+![](../.gitbook/assets/jie-tu-20200616-shang-wu-9.30.59.png)
+
+#### 使用 Postman 的 Code gen 功能，去看不同語言進行 API 的方法\(因為是自動生成，有很多不必要的程式碼，記得砍掉不需要用到的\)
+
+![](../.gitbook/assets/jie-tu-20200616-shang-wu-9.32.23.png)
+
+按下 Code 之後，你可以看到下方的 Swift 範例
+
+```text
+import Foundation
+
+var semaphore = DispatchSemaphore (value: 0)
+
+var request = URLRequest(url: URL(string: "https://rss.itunes.apple.com/api/v1/tw/ios-apps/top-free/all/3/explicit.json")!,timeoutInterval: Double.infinity)
+request.httpMethod = "GET"
+
+let task = URLSession.shared.dataTask(with: request) { data, response, error in 
+  guard let data = data else {
+    print(String(describing: error))
+    return
+  }
+  print(String(data: data, encoding: .utf8)!)
+  semaphore.signal()
+}
+
+task.resume()
+semaphore.wait()
+
+```
+
+**當然，其他語言也有**
+
+![](../.gitbook/assets/jie-tu-20200616-shang-wu-9.37.27.png)
+
 ## **Visual Studio Code \(選用\)**
 
