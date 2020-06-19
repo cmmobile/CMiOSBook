@@ -29,6 +29,11 @@
 * [Lesson1 Chart Setup](charts/lesson1-chart-setup.md)
 * [Lesson2 Chart Data](charts/untitled.md)
 
+## Test主題
+
+* [XCTest-UnitTest](test-zhu-ti/xctest-unittest.md)
+* [XCTest-UITest](test-zhu-ti/xctest-uitest.md)
+
 ## 學習資源
 
 * [相關網站](xue-xi-zi-yuan/xiang-guan-wang-zhan.md)
