@@ -6,7 +6,7 @@ description: 當操作任何物件時就是在操作記憶體，到底是如何�
 
 ## 三種記憶體區間
 
-![](../.gitbook/assets/memory.jpg)
+![&#x4E09;&#x5927;&#x5340;&#x584A;](../.gitbook/assets/memory.jpg)
 
 * static memory：全域或靜態變數
 * stack memory：local 變數，自動回收
@@ -17,9 +17,7 @@ description: 當操作任何物件時就是在操作記憶體，到底是如何�
   * [stack 與 heap 的底層概念](https://nwpie.blogspot.com/2017/05/5-stack-heap.html)
   * [MEMORY IN C – THE STACK, THE HEAP, AND STATIC](https://craftofcoding.wordpress.com/2015/12/07/memory-in-c-the-stack-the-heap-and-static/)
 
-## 記憶體區塊的操作
-
-![](../.gitbook/assets/heap_stack.jpg)
+![&#x8A18;&#x61B6;&#x9AD4;&#x5340;&#x584A;&#x7684;&#x64CD;&#x4F5C;](../.gitbook/assets/heap_stack.jpg)
 
 ## Swift裡的Value Type與Reference Type <a id="a395"></a>
 
