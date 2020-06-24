@@ -8,9 +8,9 @@ description: 當操作任何物件時就是在操作記憶體，到底是如何�
 
 ![&#x4E09;&#x5927;&#x5340;&#x584A;](../.gitbook/assets/memory.jpg)
 
-* static memory：全域或靜態變數
+* static memory：全域或靜態變數，永遠存在的變數\(Swift中用特殊機制Lazy初始化\)
 * stack memory：local 變數，自動回收
-* heap memory：dynamic 變數，使用者自己決定何時回收\(Swift中用ARC做掉\)
+* heap memory：dynamic 變數，使用者自己決定何時回收\(Swift中用ARC處理\)
 * 參考連結：
   * [C 語言程式記憶體配置概念](https://blog.gtwang.org/programming/memory-layout-of-c-program/)
   * [stack vs heap：執行時期儲存兩大要角](https://antrash.pixnet.net/blog/post/70456505)
