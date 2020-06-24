@@ -4,10 +4,10 @@
 
 ## Coding 101
 
-* [Classes / Structures?](coding-101/classes-structures.md)
-* [Value / Reference type?](coding-101/value-reference-type.md)
+* [Value / Reference Type](coding-101/value-reference-type.md)
+* [Structures / Classes](coding-101/classes-structures.md)
+* [ARC + Retain Cycle](coding-101/arc-hui-shou-ji-zhi-+retain-cycle.md)
 * [物件之間的溝通方式](coding-101/ye-mian-zhi-jian-de-gou-tong-fang-shi.md)
-* [ARC+Retain Cycle](coding-101/arc-hui-shou-ji-zhi-+retain-cycle.md)
 
 ## 工具主題 <a id="ji-ben-gong-ju"></a>
 
