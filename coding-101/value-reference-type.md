@@ -23,8 +23,12 @@ description: 當操作任何物件時就是在操作記憶體，到底是如何�
 
 ![](../.gitbook/assets/1_duhwiv0rpm0v97peqvlr7a.png)
 
-* Value Type：Int, String, Array, Dict, Enum, Struct =&gt; Pass By Value，都是新的一份資料
-* Reference Type：Class, Closure =&gt; Pass By Reference，都是同一份資料
+* Value Type：Int, String, Array, Dict, Enum, Struct
+  * Pass By Value，都是新的一份資料
+  * 記錄在 stack memory
+* Reference Type：Class, Closure
+  * Pass By Reference，都是同一份資料
+  * 記錄在 heap memory
 * 參考連結：[Value Type vs. Reference Type](https://medium.com/@wuufone/%E5%AD%B8%E6%9C%83-swift-%E7%9A%84%E9%97%9C%E9%8D%B5-value-type-vs-reference-type-50d3034596a8)
 
 ## 練習題\(可以在playground上跑\)
