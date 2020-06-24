@@ -8,9 +8,9 @@ description: 當操作任何物件時就是在操作記憶體，到底是如何�
 
 ![&#x4E09;&#x5927;&#x5340;&#x584A;](../.gitbook/assets/memory.jpg)
 
-* static memory：全域或靜態變數，永遠存在的變數\(Swift中用特殊機制Lazy初始化\)
+* static memory：全域或靜態變數，永遠存在的變數\(ex. Swift中用特殊機制Lazy初始化\)
 * stack memory：local 變數，自動回收
-* heap memory：dynamic 變數，使用者自己決定何時回收\(Swift中用ARC處理\)
+* heap memory：dynamic 變數，使用者自己決定何時回收\(ex. Swift中用ARC處理\)
 * 參考連結：
   * [C 語言程式記憶體配置概念](https://blog.gtwang.org/programming/memory-layout-of-c-program/)
   * [stack vs heap：執行時期儲存兩大要角](https://antrash.pixnet.net/blog/post/70456505)
@@ -24,10 +24,10 @@ description: 當操作任何物件時就是在操作記憶體，到底是如何�
 ![](../.gitbook/assets/1_duhwiv0rpm0v97peqvlr7a.png)
 
 * Value Type：Int, String, Array, Dict, Enum, Struct
-  * Pass By Value，都是新的一份資料
+  * 意指 Pass By Value，初始化或是傳值都是"新的一份資料"
   * 記錄在 stack memory
 * Reference Type：Class, Closure
-  * Pass By Reference，都是同一份資料
+  * 意指 Pass By Reference，初始化或是傳值都是"同一份資料"
   * 記錄在 heap memory
 * 參考連結：[Value Type vs. Reference Type](https://medium.com/@wuufone/%E5%AD%B8%E6%9C%83-swift-%E7%9A%84%E9%97%9C%E9%8D%B5-value-type-vs-reference-type-50d3034596a8)
 
