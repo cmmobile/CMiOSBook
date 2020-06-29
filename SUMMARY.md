@@ -16,6 +16,7 @@
 ## 架構主題
 
 * [MVC](jia-gou-zhu-ti/untitled.md)
+* [UIScrollViewDelegate & UITableViewDelegate](jia-gou-zhu-ti/uiscrollviewdelegate-and-uitableviewdelegate.md)
 
 ## CodingStyle主題
 
