@@ -2,7 +2,7 @@
 description: 針對 UIScrollView 和 UITableView 主要的各種 delegate 發動時機，做說明
 ---
 
-# UIScrollViewDelegate
+# UIScrollViewDelegate & UITableViewDelegate
 
 UIScrollViewDelegate protocol聲明的方法允許採用的委託 UIScrollView，從而響應並在一定程度上影響諸如滾動，縮放，滾動內容的減速和滾動動畫之類的操作，任何繼承 UIScrollView 都可使用。
 
@@ -57,5 +57,4 @@ Tells the delegate that the scroll view is starting to decelerate the scrolling 
 Tells the delegate that the scroll view has ended decelerating the scrolling movement.
 
 當快速滑動停下來時觸發
-
 
