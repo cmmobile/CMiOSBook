@@ -20,16 +20,31 @@ ChartDataEntry(x: 0, y: 1)
 CandleChartDataEntry(x: 0, shadowH: 10, shadowL: 0, open: 0, close: 0)
 ```
 
+### 2.Entry轉換成DataSet
+
 建立模擬資料
 
 ```swift
-var enties: [CandleChartDataEntry] = []
-for i in 1...5 {
-    let number = Double(i) * 10
-    let e = CandleChartDataEntry(x: Double(i), shadowH: number + 2, shadowL: number - 2, open: number, close: number + 2)
-    enties.append(e)
+private func setData() {
+    var enties: [CandleChartDataEntry] = []
+    for (i, data) in datas.enumerated() {
+        let e = CandleChartDataEntry(x: Double(i), shadowH: data.high, shadowL: data.low, open: data.open, close: data.close)
+        enties.append(e)
+    }
+    let set1 = CandleChartDataSet(entries: enties, label: nil)
+    let data = CandleChartData(dataSet: set1)
+    
+    chart.data = data
 }
 ```
 
 一般大部分在公司的Chart X軸代表的都是日期
+
+所以會拿index值直接放入x內再使用限制線去顯示日期
+
+![](../.gitbook/assets/jie-tu-20200702-xia-wu-6.00.59.png)
+
+### 3.DataSet轉換成ChartData
+
+...
 
