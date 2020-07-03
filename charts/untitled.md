@@ -73,11 +73,11 @@ let data = CandleChartData(dataSet: set1)
 
 ### 4.ChartData放入 Charts
 
-完成
-
 ```text
 chart.data = data
 ```
 
+### 5.補上日期
 
+待編輯
 
