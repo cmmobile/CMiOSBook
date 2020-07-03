@@ -58,7 +58,7 @@ private func setDataSet(enties: [CandleChartDataEntry]) -> CandleChartDataSet {
 }
 ```
 
-![](../.gitbook/assets/jie-tu-20200703-xia-wu-12.07.15.png)
+![](../.gitbook/assets/jie-tu-20200703-xia-wu-12.07.15%20%281%29.png)
 
 ### 3.DataSet轉換成ChartData
 
@@ -79,5 +79,25 @@ chart.data = data
 
 ### 5.補上日期
 
-待編輯
+以同樣的資料源\(kDatas\)確保index\(ChartData x\)會對應到相同的kData，再從data裡面的時間字串去加上限制線
+
+```swift
+private func setDateLine() {
+    for (i, info) in kDatas.enumerated() {
+        addDateLimitLine(month: info.time, index: i)
+    }
+}
+
+///增加限制線(月線)
+private func addDateLimitLine(month: String, index: Int) {
+    let monthLimitLine = ChartLimitLine(limit: Double(index), label: month)
+    monthLimitLine.labelPosition = .bottomLeft
+    monthLimitLine.lineWidth = 1
+    monthLimitLine.lineColor = .white
+    monthLimitLine.valueTextColor = .white
+    chart.xAxis.addLimitLine(monthLimitLine)
+}
+```
+
+![](../.gitbook/assets/jie-tu-20200703-xia-wu-4.51.51.png)
 
