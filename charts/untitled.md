@@ -25,7 +25,7 @@ CandleChartDataEntry(x: 0, shadowH: 10, shadowL: 0, open: 0, close: 0)
 ```swift
 private func setData() {
     var enties: [CandleChartDataEntry] = []
-    for (i, data) in datas.enumerated() {
+    for (i, data) in kDatas.enumerated() {
         let e = CandleChartDataEntry(x: Double(i), shadowH: data.high, shadowL: data.low, open: data.open, close: data.close)
         enties.append(e)
     }
