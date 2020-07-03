@@ -50,7 +50,7 @@ Tells the delegate that the scroll view scrolled to the top of the content.
 
 Tells the delegate that the scroll view is starting to decelerate the scrolling movement.
 
-當開始加速滑動時觸發
+當快速滑動準備停止時觸發
 
 ### `func scrollViewDidEndDecelerating(UIScrollView)`
 
