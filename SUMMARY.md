@@ -30,6 +30,7 @@
 * [簡介](charts/jian-jie.md)
 * [Lesson1 Chart Setup](charts/lesson1-chart-setup.md)
 * [Lesson2 Chart Data](charts/untitled.md)
+* [Lesson3 CombinedChartView](charts/lesson3-combinedchartview.md)
 
 ## Test主題
 

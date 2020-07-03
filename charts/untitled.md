@@ -20,8 +20,6 @@ ChartDataEntry(x: 0, y: 1)
 CandleChartDataEntry(x: 0, shadowH: 10, shadowL: 0, open: 0, close: 0)
 ```
 
-### 2.Entry轉換成DataSet
-
 建立模擬資料
 
 ```swift
@@ -44,7 +42,42 @@ private func setData() {
 
 ![](../.gitbook/assets/jie-tu-20200702-xia-wu-6.00.59.png)
 
+### 2.Entry轉換成DataSet
+
+設定資料的樣式讓他有K線的樣子
+
+```swift
+private func setDataSet(enties: [CandleChartDataEntry]) -> CandleChartDataSet {
+    let dataset = CandleChartDataSet(entries: enties, label: nil)
+    dataset.decreasingColor = .green
+    dataset.increasingColor = .red
+    dataset.decreasingFilled = true
+    dataset.increasingFilled = true
+    dataset.shadowColorSameAsCandle = true
+    return dataset
+}
+```
+
+![](../.gitbook/assets/jie-tu-20200703-xia-wu-12.07.15.png)
+
 ### 3.DataSet轉換成ChartData
 
-...
+這個步驟主要是有些Charts Data會放好幾個Dataset \(例如:多線圖\)
+
+K線圖通常就一個Dataset就行了
+
+```swift
+let set1 = setDataSet(enties: enties)
+let data = CandleChartData(dataSet: set1)
+```
+
+### 4.ChartData放入 Charts
+
+完成
+
+```text
+chart.data = data
+```
+
+
 
