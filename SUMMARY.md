@@ -31,6 +31,7 @@
 * [Lesson1 Chart Setup](charts/lesson1-chart-setup.md)
 * [Lesson2 Chart Data](charts/untitled.md)
 * [Lesson3 CombinedChartView](charts/lesson3-combinedchartview.md)
+* [Lesson4 Renderer](charts/lesson4-renderer.md)
 
 ## Test主題
 
