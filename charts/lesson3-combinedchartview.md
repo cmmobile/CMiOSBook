@@ -64,5 +64,42 @@ chart.xAxis.axisMaximum = Double(lineDatas.count) - 0.5
 
 最大值會由資料的根數去決定
 
-待編輯...
+![](../.gitbook/assets/jie-tu-20200706-shang-wu-9.07.29.png)
+
+### axisDependency介紹
+
+有時會遇有兩種圖單位差距很大放在同一張表的需求\(例如:股價與殖利率\)
+
+這時就需要讓兩張圖的依附值分別在不同邊
+
+這邊直接把剛剛的線圖除以100來做案例
+
+```swift
+for i in 1...5 {
+    let number = Double(i) * 10
+//            let data = LineData(time: "\(i)月", price: number - 1)
+    
+    //axisDependency介紹
+    let data = LineData(time: "\(i)月", price: (number - 1)/100)
+    datas.append(data)
+}
+```
+
+![&#x5716;2](../.gitbook/assets/jie-tu-20200706-shang-wu-9.17.43.png)
+
+沒有處理的狀況下如圖2,導致沒辦法看出另一張圖的曲線
+
+此時只要將兩種data set分別依附在左右不同邊即可以用較好的方式呈現這兩種數據
+
+```swift
+let dataset = LineChartDataSet(entries: enties, label: nil)
+        dataset.axisDependency = .left
+        
+        -------
+        
+let dataset = CandleChartDataSet(entries: enties, label: nil)
+        dataset.axisDependency = .right
+```
+
+![](../.gitbook/assets/jie-tu-20200706-shang-wu-9.22.27.png)
 
