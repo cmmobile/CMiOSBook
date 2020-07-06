@@ -4,6 +4,8 @@ description: 多資料的圖表實作
 
 # Lesson3 CombinedChartView
 
+範例：[https://github.com/cmmobile/WWChartsDemo](https://github.com/cmmobile/WWChartsDemo)
+
 一般用到K線圖得地方 都會需要參考線
 
 使用CombinedChartView實作
