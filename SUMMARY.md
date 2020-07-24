@@ -45,4 +45,5 @@
 
 * [相關網站](xue-xi-zi-yuan/xiang-guan-wang-zhan.md)
 * [相關會議與社群](xue-xi-zi-yuan/xiang-guan-hui-yi-yu-she-qun.md)
+* [計算機考題](xue-xi-zi-yuan/ji-suan-ji-kao-ti.md)
 
