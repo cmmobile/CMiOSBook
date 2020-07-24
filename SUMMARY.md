@@ -17,13 +17,16 @@
 ## 架構主題
 
 * [MVC](jia-gou-zhu-ti/untitled.md)
-* [UIScrollViewDelegate & UITableViewDelegate](jia-gou-zhu-ti/uiscrollviewdelegate-and-uitableviewdelegate.md)
 
 ## CodingStyle主題
 
 * [CodingStyle 規則](codingstyle-zhu-ti/untitled.md)
 * [靜態檢查器](codingstyle-zhu-ti/jing-tai-jian-cha-qi.md)
 * [專案基本規定](codingstyle-zhu-ti/zhuan-an-ji-ben-gui-ding.md)
+
+## UI主題
+
+* [UIScrollViewDelegate & UITableViewDelegate](ui-zhu-ti/uiscrollviewdelegate-and-uitableviewdelegate.md)
 
 ## Charts主題 <a id="charts"></a>
 
