@@ -1,13 +1,5 @@
 # 相關會議與社群
 
-
-
-{% tabs %}
-{% tab %}
-
-{% endtab %}
-{% endtabs %}
-
 | 社群 | 地點 | 頻率 | 備註 | 連結 |
 | :--- | :--- | :--- | :--- | :--- |
 | Cocoahead Taipei | PicCollage | 每個月第二個禮拜四 |  | [https://www.facebook.com/groups/cocoaheads.taipei/](https://www.facebook.com/groups/cocoaheads.taipei/) |
