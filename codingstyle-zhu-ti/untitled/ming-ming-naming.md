@@ -12,15 +12,15 @@
 {% endhint %}
 
 ```swift
-    class WidgetContainer { //大寫開頭駝峰式
-        private var widgetButton: UIButton //小寫開頭駝峰式
-        let widgetHeightPercentage = 0.85 //小寫開頭駝峰式
-    }
+class WidgetContainer { //大寫開頭駝峰式
+    private var widgetButton: UIButton //小寫開頭駝峰式
+    let widgetHeightPercentage = 0.85 //小寫開頭駝峰式
+}
 
-    enum Shape {
-        case rectangle //列舉內部的case小寫開頭駝峰式
-        case square
-    }
+enum Shape {
+    case rectangle //列舉內部的case小寫開頭駝峰式
+    case square
+}
 ```
 
 {% hint style="info" %}
@@ -28,17 +28,17 @@
 {% endhint %}
 
 ```swift
-    public class GetLoginGuidResponse: CMoneyResponseBase, Codable {
-        public var guid: String = ""
-        public var authToken: String  = ""
-        public var memberPk: Int = 0
+public class GetLoginGuidResponse: CMoneyResponseBase, Codable {
+    public var guid: String = ""
+    public var authToken: String  = ""
+    public var memberPk: Int = 0
 
-        /// CodingKeys
-        public enum CodingKeys: String, CodingKey {
-            case guid = "Guid"
-            case authToken = "AuthToken"
-            case memberPk = "MemberPk"
-        }
+    /// CodingKeys
+    public enum CodingKeys: String, CodingKey {
+        case guid = "Guid"
+        case authToken = "AuthToken"
+        case memberPk = "MemberPk"
     }
+}
 ```
 
