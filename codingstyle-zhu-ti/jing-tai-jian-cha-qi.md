@@ -15,21 +15,24 @@ description: 需要一位服裝審核員幫我們檢驗，程式碼是否有依�
 
 ### 安裝方法
 
-* 第一步：使用CocoaPods，在各專案的PodFile裡加上下面程式碼。
+* 第一步：設定PodFile，並且pod install
+  * 開啟專案內的PodFile裡加入下面程式碼
 
 ```text
 pod 'SwiftLint'
 ```
 
-* 第二步：在各自手機專案內設定Build Phases&gt;按“＋”&gt;RunScript&gt;輸入下方腳本
+* 第二步：設定Build Phases
+  * 開啟專案內設定Build Phases &gt; 按 “＋” &gt; RunScript &gt; 輸入下方腳本
 
 ```text
-"${PODS_ROOT}/SwiftLint/swiftlint" lint --config "${SRCROOT}/.swiftlint.yml"
+"${PODS_ROOT}/SwiftLint/swiftlint" lint --config "${SRCROOT}/swiftlint.yml"
 ```
 
-* 第三步：放入設定檔\(.swiftlint.yml\)：用來設定規則的設定檔
-  * 放在專案的根目錄，叫做".swiftlint.yml"\(它是隱藏的\)
-  * 設定檔連結請回公司GitLab找!!!
+* 第三步：放入規則設定檔
+  * 放在專案的根目錄，叫做"swiftlint.yml"
+
+{% file src="../.gitbook/assets/swiftlint.yml" %}
 
 ### **執行方法**
 
