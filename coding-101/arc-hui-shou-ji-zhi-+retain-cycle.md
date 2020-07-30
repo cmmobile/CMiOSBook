@@ -6,7 +6,9 @@ description: 理解程式是如何管控記憶體並且正確地操作物件，�
 
 ## 課程文件
 
-* 文件連結：[swift.org](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
+* 參考連結：
+  * [Automatic Reference Counting](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
+  * [Swift Retain Cycle](https://ithelp.ithome.com.tw/articles/10196788)
 * 範例連結： [https://github.com/cmmobile/iOS\_RetainCycleProject](https://github.com/cmmobile/iOS_RetainCycleProject)
 
 ## 如何找Retain Cycle
