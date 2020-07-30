@@ -54,7 +54,7 @@ func execute(base: Base){
 
 ## 延伸議題：
 
-先乘除後加減需要兩步驟 - [http://www2.lssh.tp.edu.tw/~hlf/class-1/lang-c/stack2.htm](http://www2.lssh.tp.edu.tw/~hlf/class-1/lang-c/stack2.htm)
+先乘除後加減需要兩步驟 -  [參考資料Link](http://www2.lssh.tp.edu.tw/~hlf/class-1/lang-c/stack2.htm)
 
 1. 計算式把中序轉後序
 2. 把後序的運算符號放入Stack裡計算即可
