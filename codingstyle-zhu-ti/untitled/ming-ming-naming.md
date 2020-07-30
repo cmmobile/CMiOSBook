@@ -1,9 +1,15 @@
 # 命名\(Naming\)
 
-* 命名一律駝峰式，不論存取權限、不論常數或變數\(因為官方推薦\)
+{% hint style="success" %}
+命名一律駝峰式，不論存取權限、不論常數或變數
+
 * 開頭必大寫：Class\(類別\)、Structure\(結構\)、Enum\(列舉\)、Protocol\(協議\)
 * 開頭必小寫：Function\(方法\)、Field\(變數\)、Property\(屬性\)、列舉內部的Case
-* 禁止全大寫和底線式
+{% endhint %}
+
+{% hint style="danger" %}
+禁止全大寫和底線式
+{% endhint %}
 
 ```swift
     class WidgetContainer { //大寫開頭駝峰式
@@ -17,7 +23,9 @@
     }
 ```
 
-備註：如果後台傳回來的json轉換出的物件，欄位是大寫，可使用CodingKey的方式
+{% hint style="info" %}
+備註：如果後台傳回來的json轉換出的物件，欄位是大寫，可使用CodingKey的方式解析。
+{% endhint %}
 
 ```swift
     public class GetLoginGuidResponse: CMoneyResponseBase, Codable {
