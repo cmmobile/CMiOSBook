@@ -14,9 +14,9 @@ description: 當操作任何物件時就是在操作記憶體，到底是如何�
 static var a = 100
 ```
 
-#### 2. stack memory：local 變數，方法結束會自動回收
+#### 2. stack memory：變數在方法結束會自動回收
 
-#### 3. heap memory：dynamic 變數，使用者自己決定何時回收\(ex. Swift中用ARC處理\)
+#### 3. heap memory：變數由使用者自己決定何時回收\(ex. Swift中用ARC處理\)
 
 ![&#x8A18;&#x61B6;&#x9AD4;&#x5340;&#x584A;&#x7684;&#x64CD;&#x4F5C;](../.gitbook/assets/heap_stack.jpg)
 
