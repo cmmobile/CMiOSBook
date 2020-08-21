@@ -51,15 +51,18 @@ var car0 = Car(number: 0)
 var car1 = Car(number: 1)
 var cars = [car0, car1]
 var newCars = cars
+
 cars.sort { $0.number > $1.number }
-dump(cars)
-dump(newCars)
+dump(cars) // [{number 1}, {number 0}]
+dump(newCars) // [?, ?]
+
 car0.number = 2
-dump(cars)
-dump(newCars)
+dump(cars) // [?, ?]
+dump(newCars) // [?, ?]
+
 cars[0].number = 3
-dump(cars)
-dump(newCars)
+dump(cars) // [?, ?]
+dump(newCars) // [?, ?]
 ```
 
 ```swift
@@ -73,14 +76,17 @@ var car0 = Car(number: 0)
 var car1 = Car(number: 1)
 var cars = [car0, car1]
 var newCars = cars
+
 cars.sort { $0.number > $1.number }
-dump(cars)
-dump(newCars)
+dump(cars) // [{number 1}, {number 0}]
+dump(newCars) // [?, ?]
+
 car0.number = 2
-dump(cars)
-dump(newCars)
+dump(cars) // [?, ?]
+dump(newCars) // [?, ?]
+
 cars[0].number = 3
-dump(cars)
-dump(newCars)
+dump(cars) // [?, ?]
+dump(newCars) // [?, ?]
 ```
 
