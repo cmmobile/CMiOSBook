@@ -25,6 +25,8 @@
   * [命名\(Naming\)](codingstyle-zhu-ti/untitled/ming-ming-naming.md)
   * [程式格式\(Format\)](codingstyle-zhu-ti/untitled/cheng-shi-ge-shi-format.md)
   * [註解\(Comment\)](codingstyle-zhu-ti/untitled/zhu-jie-comment.md)
+  * [類別與結構\(Classes and Structures\)](codingstyle-zhu-ti/untitled/lei-bie-yu-jie-gou-classes-and-structures.md)
+  * [修飾詞\(Modifier\)](codingstyle-zhu-ti/untitled/xiu-shi-ci-modifier.md)
 * [靜態檢查器](codingstyle-zhu-ti/jing-tai-jian-cha-qi.md)
 * [專案基本規定](codingstyle-zhu-ti/zhuan-an-ji-ben-gui-ding.md)
 

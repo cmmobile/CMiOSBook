@@ -9,10 +9,10 @@
 {% endhint %}
 
 ```swift
-//冒號左邊不留空，右邊留空
+// 冒號左邊不留空，右邊留空
 @IBOutlet weak var tableView: UITableView!
     
-//冒號和逗號左邊不留空，右邊留空
+// 冒號和逗號左邊不留空，右邊留空
 private func initTableView(index: Int, name: String) {
     //....
 }
@@ -23,7 +23,7 @@ private func initTableView(index: Int, name: String) {
 {% endhint %}
 
 ```swift
-//冒號左右都留空
+// 冒號左右都留空
 let dataCount = isGetDataDone ? listCount : 0
 ```
 
@@ -32,7 +32,7 @@ let dataCount = isGetDataDone ? listCount : 0
 {% endhint %}
 
 ```swift
-//禁止加上分號
+// 禁止加上分號
 let count = 0
 ```
 
