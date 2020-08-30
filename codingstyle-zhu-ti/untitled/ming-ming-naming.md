@@ -13,7 +13,7 @@
 
 ```swift
 class WidgetContainer { //大寫開頭駝峰式
-    private var widgetButton: UIButton //小寫開頭駝峰式
+    var widgetButton: UIButton //小寫開頭駝峰式
     let widgetHeightPercentage = 0.85 //小寫開頭駝峰式
 }
 
@@ -41,4 +41,10 @@ public class GetLoginGuidResponse: CMoneyResponseBase, Codable {
     }
 }
 ```
+
+{% hint style="success" %}
+建議使用有意義的命名，該命名盡可能符合該變數所具有的功能
+
+a, b, temp1, temp2, nameA, nameB 這一類的命名方式都是不好的
+{% endhint %}
 

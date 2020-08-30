@@ -23,6 +23,8 @@
 * [CodingStyle 規則](codingstyle-zhu-ti/untitled/README.md)
   * [專案\(Project\)](codingstyle-zhu-ti/untitled/zhuan-an-yu-zheng-que-xing-projectcorrectness.md)
   * [命名\(Naming\)](codingstyle-zhu-ti/untitled/ming-ming-naming.md)
+  * [程式格式\(Format\)](codingstyle-zhu-ti/untitled/cheng-shi-ge-shi-format.md)
+  * [註解\(Comment\)](codingstyle-zhu-ti/untitled/zhu-jie-comment.md)
 * [靜態檢查器](codingstyle-zhu-ti/jing-tai-jian-cha-qi.md)
 * [專案基本規定](codingstyle-zhu-ti/zhuan-an-ji-ben-gui-ding.md)
 
