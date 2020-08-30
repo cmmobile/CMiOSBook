@@ -13,6 +13,15 @@
 8. owned \(weak, ....\)
 {% endhint %}
 
+```swift
+public class GetMemberDataRequest: AuthRequest {
+    
+    public override var address: String {
+        return "MemberData"
+    }
+}
+```
+
 {% hint style="success" %}
 存取修飾詞只有internal不寫，其他都要寫 \(例如 private, public...\)
 {% endhint %}
