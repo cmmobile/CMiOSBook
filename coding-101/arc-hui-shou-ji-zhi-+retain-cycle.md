@@ -19,14 +19,8 @@ description: 理解程式是如何管控記憶體並且正確地操作物件，�
 ```swift
 /// 人物
 class People {
-    let name: String
-    var macbook: Macbook?
-
-    init(name: String, macbook: Macbook?) {
-        self.name = name
-        self.macbook = macbook
-    }
-
+    let name: String = "John"
+    var macbook: Macbook? = nil
     deinit {
         print("\(name) deinit.")
     }
@@ -34,14 +28,8 @@ class People {
 
 /// 筆電
 class Macbook {
-    let name: String
-    var owner: People? // <----- 必須加上weak才可以被釋放
-
-    init(name: String, owner: People?) {
-        self.name = name
-        self.owner = owner
-    }
-
+    let name: String = "Macbook"
+    var owner: People? = nil
     deinit {
         print("\(name) deinit.")
     }
@@ -51,4 +39,28 @@ class Macbook {
 ### 方法二：使用 Xcode 的 Debug Memory Graphic
 
 ![Debug Memory Graphic](../.gitbook/assets/jie-tu-20200701-xia-wu-5.05.42.png)
+
+## 如何解決Retain Cycle
+
+### 情境一： 兩個類別互相擁有，其中一方加上weak即可!!!
+
+```swift
+/// 人物
+class People {
+    let name: String = "John"
+    var macbook: Macbook?
+    deinit {
+        print("\(name) deinit.")
+    }
+}
+
+/// 筆電
+class Macbook {
+    let name: String = "Macbook"
+    weak var owner: People? // <----- 必須加上weak才可以被釋放
+    deinit {
+        print("\(name) deinit.")
+    }
+}
+```
 
