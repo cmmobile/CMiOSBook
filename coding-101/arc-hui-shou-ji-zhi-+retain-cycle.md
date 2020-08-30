@@ -42,13 +42,13 @@ class Macbook {
 
 ## 如何解決Retain Cycle
 
-### 情境一： 兩個類別互相擁有，其中一方加上weak即可!!!
+### 情境一： 兩個類別互相擁有，加上weak即可!!!
 
 ```swift
 /// 人物
 class People {
     let name: String = "John"
-    var macbook: Macbook?
+    var macbook: Macbook? = nil
     deinit {
         print("\(name) deinit.")
     }
@@ -57,10 +57,60 @@ class People {
 /// 筆電
 class Macbook {
     let name: String = "Macbook"
-    weak var owner: People? // <----- 必須加上weak才可以被釋放
+    weak var owner: People? = nil // <----- 必須加上weak才可以被釋放
     deinit {
         print("\(name) deinit.")
     }
+}
+```
+
+### 情境二：Delegate和Protocol，加上weak即可!!!
+
+```swift
+protocol DataManagerDelegate: class {
+    func didGetData()
+}
+
+class DataManager{
+
+    weak var delegate: DataManagerDelegate? // <----- 必須加上weak才可以被釋放
+    func getData(){
+        delegate?.didGetData()
+    }
+}
+```
+
+### 情境三：被擁有的Closure，定義時請使用weak self即可!!!
+
+```swift
+class MemberManager{
+    var didChangeMember: ((String) -> Void)?
+    func changeMember(){
+        didChangeMember?("更換會員")
+    }
+}
+
+class TestClosure2ViewController: UIViewController {
+
+    var label = UILabel()
+    let memberManager = MemberManager()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        memberManager.didChangeMember = { 
+            [weak self] value in // <----- Closure被Hold著，必須加上weak才可以被釋放
+            guard let self = self else { return }
+            self.label.text = value
+        }
+        
+        memberManager.changeMember()
+    }
+
+    deinit {
+        print("TestClosure2 deinit.")
+    }
+    
 }
 ```
 
