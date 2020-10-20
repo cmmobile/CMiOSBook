@@ -52,7 +52,7 @@ Todo - 把資料補完
   * [蘋果官方的 MVC 架構介紹](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
   * [Ray Wenderlich 的 MVC 架構介紹](https://www.raywenderlich.com/1073-model-view-controller-mvc-in-ios-a-modern-approach)
   * [iOS 各種架構](https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52)
-  * [The only viable iOS architecture](https://medium.com/flawless-app-stories/the-only-viable-ios-architecture-c42f7b4c845d)
+  * [The only viable iOS architecture\(唯一可行的 iOS 架構\)](https://medium.com/flawless-app-stories/the-only-viable-ios-architecture-c42f7b4c845d)
 * **推薦影片**
   * [iPlayground 2019 \| 漫談 iOS 架構：MVC / MVVM / VIPER 與 Redux](https://www.youtube.com/watch?v=qDyb6AkX0s0)
   * [iPlayground 2019 \| 從MVC到MVVM，再到MVVMC的開發經驗分享](https://www.youtube.com/watch?v=0GQXVfahdI4)
