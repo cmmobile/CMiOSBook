@@ -41,12 +41,19 @@ static var a = 100
 * 參考連結：[Value Type vs. Reference Type](https://medium.com/@wuufone/%E5%AD%B8%E6%9C%83-swift-%E7%9A%84%E9%97%9C%E9%8D%B5-value-type-vs-reference-type-50d3034596a8)
 
 ```swift
+var a = "0050"
+var b = a
+a = "2330"
+print(b) // "0050"
+```
+
+```swift
 struct Stock{
     var name: String = "0050"
 }
 var a = Stock()
 var b = a
-a.name = "0051"
+a.name = "2330"
 print(b.name) // "0050"
 ```
 
@@ -56,8 +63,8 @@ class Stock{
 }
 var a = Stock()
 var b = a
-a.name = "0051"
-print(b.name) // "0051"
+a.name = "2330"
+print(b.name) // "2330"
 ```
 
 ## 課後練習題\(可以在playground上跑\)
