@@ -8,11 +8,7 @@ description: 當操作任何物件時就是在操作記憶體，到底是如何�
 
 ![&#x4E09;&#x5927;&#x5340;&#x584A;](../.gitbook/assets/memory.jpg)
 
-#### 1. static memory：全域或靜態變數，永遠存在的變數\(ex. Swift中用特殊機制Lazy初始化\)
-
-```swift
-static var a = 100
-```
+#### 1. static memory：靜態變數\(static\)，永遠存在的變數\(ex. Swift中用特殊機制Lazy初始化\)
 
 #### 2. stack memory：變數在方法結束會自動回收
 
@@ -26,18 +22,20 @@ static var a = 100
   * [stack 與 heap 的底層概念](https://nwpie.blogspot.com/2017/05/5-stack-heap.html)
   * [MEMORY IN C – THE STACK, THE HEAP, AND STATIC](https://craftofcoding.wordpress.com/2015/12/07/memory-in-c-the-stack-the-heap-and-static/)
 
-## Swift裡的Value Type與Reference Type <a id="a395"></a>
+## Swift 裡的 Value Type 與 Reference Type <a id="a395"></a>
 
 ![](../.gitbook/assets/1_duhwiv0rpm0v97peqvlr7a.png)
 
 * Value Type：Int, String, Array, Dict, Enum, Struct
   * 記錄在 stack memory
-  * 同時變數在方法結束會自動回收
-  * 所以初始化或是傳值都是"新的一份資料"，即為 Pass By Value
+  * 因為變數在方法結束會自動回收
+  * 所以賦值或是傳值都是"新的一份資料"，即為 Pass By Value
 * Reference Type：Class, Closure
   * 記錄位址在stack memory，紀錄資料在heap memory
-  * 同時用ARC回收
-  * 所以初始化或是傳值都是"同一份資料"，即為 Pass By Reference
+  * 因為變數在方法結束不會回收，是利用ARC回收
+  * 所以賦值或是傳值都是"同一份資料"，即為 Pass By Reference
+* Value Type 和 Reference Type 都只是基於操作記憶體的方式不同，而產生的簡稱
+* Value Type 和 Reference Type 萬年爭議哪個好？操作安全性？記憶體消耗？
 * 參考連結：[Value Type vs. Reference Type](https://medium.com/@wuufone/%E5%AD%B8%E6%9C%83-swift-%E7%9A%84%E9%97%9C%E9%8D%B5-value-type-vs-reference-type-50d3034596a8)
 
 ```swift
@@ -45,6 +43,12 @@ var a = "0050"
 var b = a
 a = "2330"
 print(b) // "0050"
+
+// String 賦值是複製一份 String
+
+func resetData(input: Int){
+    input = "" // Error 無法編譯，input 預設是 let
+}
 ```
 
 ```swift
@@ -55,6 +59,12 @@ var a = Stock()
 var b = a
 a.name = "2330"
 print(b.name) // "0050"
+
+// struct 賦值是複製一份 struct
+
+func resetData(input: Stock){
+    input.name = "" // Error 無法編譯，input 預設是 let
+}
 ```
 
 ```swift
@@ -65,6 +75,16 @@ var a = Stock()
 var b = a
 a.name = "2330"
 print(b.name) // "2330"
+
+// class 賦值是用同一份 class
+
+func resetData(input: Stock){
+    input.name = "Null"
+}
+resetData(input: a)
+print(a.name)
+
+// class 傳值是用同一份 class，可以在方法內修改
 ```
 
 ## 課後練習題\(可以在playground上跑\)
