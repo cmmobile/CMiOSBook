@@ -32,7 +32,7 @@ pod 'SwiftLint'
 * 第三步：放入規則設定檔
   * 放在專案的根目錄，叫做"swiftlint.yml"
 
-{% file src="../.gitbook/assets/swiftlint.yml" %}
+{% file src="../.gitbook/assets/swiftlint \(1\).yml" %}
 
 ### **執行方法**
 

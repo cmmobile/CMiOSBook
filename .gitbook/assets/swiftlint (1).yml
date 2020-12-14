@@ -1,0 +1,227 @@
+# ==================================================================================================================
+# [SwiftCodingStyle]
+# 目前CodingStyle覆蓋率：
+# [O]：代表已經成功設定檢查 (17條)
+# [X]：不能檢查 (11條)
+# ==================================================================================================================
+
+# 正確性(Correctness)
+#   - 禁止有紅色Error
+#   - 禁止有黃色警告
+
+# 命名(Naming)
+#   [O]- 命名一律駝峰式
+#   [O]- 開頭必大寫：Class(類別)、Structure(結構)、Enum(列舉)、Protocol(協議)
+#   [O]- 開頭必小寫：Function(方法)、Field(變數)、Property(屬性)、列舉內部的Case
+#   [O]- 禁止全大寫和底線式
+#   [X]- 禁止過度簡寫或自訂簡寫
+#   [X]- 禁止寫類別的前綴詞 ，除非發生類別衝名
+
+# 程式架構(Code Organization)
+#   [X]- 一個Tab是4空格(Xcode預設)
+#   [O]- 所有冒號和逗號的左邊不留空，右邊留空(兩個例外)
+#   [O]- 三元判斷式，冒號左右都留空
+#   [O]- 程式碼禁止結尾加上分號
+#   [X]- 請用extension區隔不同的protocol
+
+# 註解(Comments)
+#   [X]- 全部類別、屬性、方法、列舉，皆用詳細註解(option + cmd + /)，平常用於解釋部份Code為//
+#   [X]- extension必用// MARK: - 
+
+# 類別與結構(Classes and Structures)
+#   [X]- 一個屬性佔一行
+#   [O]- 屬性,方法,全域變數的存取子只有internal不寫，其他都要寫(例如:private,public...)
+#   [X]- 類別內部呼叫成員禁止加self
+#   [O]- 只需要Get的屬性禁止寫Get
+#   [O]- 使用上Get和Set必同時出現，為了程式一致性並強調讀寫數值
+
+# 閉包表達式(Closures)
+#   [O]- 如果單一Closure當結尾參數時，使用TrailingClosure
+#   [O]- 如果多個Closure當結尾參數時，請分開並完整寫出、禁止使用TrailingClosure
+
+# 型別(Types)
+#   [X]- 禁止用NS系列的型別(OC語法)(例如NSNumber) 
+#   [X]- 禁止在Class外宣告變數或方法
+#   [X]- 如果"同時"要取多個Optional做是否為nil的判斷，必用if let加逗號連續 ，不要用巢狀
+#   [O]- delegate前一定要加weak
+#   [O]- 陣列、字典、Optional請用簡潔的寫法
+
+# 訪問控制(Access Control)
+#   [O]- 存取修飾詞放在(dynamic、lazy、var、let、override...)的前面，只有@IBAction和@IBOutlet才可以在存取修飾詞之前
+
+# ==================================================================================================================
+
+# 禁用局部方法範例：(請記得一定要disable和enable成對出現QWQ，不然就會關了忘了開)
+# // swiftlint:disable colon
+# let noWarning :String = "" // 我被跳過了
+# // swiftlint:enable colon
+
+# ==================================================================================================================
+
+# 官方提供的規則：https://realm.github.io/SwiftLint/rule-directory.html
+
+# 不啟用的規則
+disabled_rules:
+  - control_statement
+  - redundant_optional_initialization
+  - trailing_whitespace
+  - opening_brace
+  - file_length
+  - type_body_length
+  - function_body_length
+  - line_length
+  - force_cast
+  - force_try
+  - attributes
+  - trailing_newline
+  - legacy_constructor
+  - switch_case_alignment
+  - return_arrow_whitespace
+  - closure_parameter_position
+  - redundant_set_access_control
+  - notification_center_detachment
+  - empty_parentheses_with_trailing_closure
+  - vertical_whitespace
+  - statement_position
+  - function_parameter_count
+  - unused_closure_parameter
+  - empty_enum_arguments
+  - unused_enumerated
+  - todo
+  - void_return
+  - private_over_fileprivate
+  - large_tuple
+  - nesting
+  
+# 啟用的規則
+opt_in_rules:
+  - identifier_name # 變數名稱規則，此規則可小駝峰、全大寫和底線式，需要客製化規則輔助
+  - type_name # 型別名稱規則(class,struct,enum,protocol....)，此規則為大駝峰
+  - trailing_semicolon #禁止分號(;)
+  - weak_delegate #weak必搭delegate
+  - implicit_getter #只需要Get的屬性禁止寫Get、使用上Get和Set必同時出現
+  - modifier_order #修飾詞排序
+  - trailing_closure #單一Closure當結尾參數時，使用TrailingClosure
+  - colon #冒號(:)-左邊不留空、右邊留空
+  - comma #逗號(,)-左邊不留空、右邊留空
+  - syntactic_sugar #陣列、字典、Optional用語法糖
+
+  #- missing_docs #判斷是否有"///"註解
+  # 目前有下面兩個問題，所以先不啟用
+  # (1)無法找到全部沒有寫註解的程式碼 (不知是何種原因)
+  # (2)會誤判public extension要寫"///..."，與官方和我們訂的規則有衝突，應該要是"// MARK: - ..."
+
+# 客製化的規則
+custom_rules:
+  identifier_name_dont_only_capital:
+    name: "Identifier Name Don't Only Capital"
+    regex: "(^[a-zA-Z ]*(?:var|let|func) ((?!URL)[A-Z]+)[:( ]+)"
+    message: "禁止全大寫"
+    severity: error
+  identifier_name_dont_use_bottomLine:
+    name: "Identifier Name Don't Use BottomLine"
+    regex: "(^[a-zA-Z ]*(?:protocol|extension|class|struct|enum|var|let|func) _+[a-zA-Z0-9]+)"
+    message: "禁止底線式"
+    severity: error
+  dont_use_internal:
+    name: "Don't Use Internal"
+    regex: "([ ]*internal )"
+    message: "禁止使用internal當修飾詞(不寫internal即可)"
+    severity: error
+  ternary_operator_with_left_space:
+    name: "Ternary Operator With Left Space"
+    regex: ' \? [A-Za-z0-9()]+\:[ ]*[A-Za-z0-9()]+'
+    message: "三元判斷式冒號的左邊需要空白"
+    severity: error
+  ternary_operator_with_right_space:
+    name: "Ternary Operator With Right Space"
+    regex: ' \? [A-Za-z0-9()]+[ ]*\:[A-Za-z0-9()]+'
+    message: "三元判斷式冒號的右邊需要空白"
+    severity: error
+    
+# 原本是warning，要改成error
+weak_delegate: error
+trailing_closure: 
+  severity: error
+colon: 
+  severity: error
+comma:
+  severity: error
+implicit_getter:
+  severity: error
+trailing_semicolon:
+  severity: error
+mark:
+  severity: error
+
+# 方法內的判斷式複雜度(任何if或switch中每個case都算)
+# 做了30以上的判斷:警告
+# 做了100以上的判斷:錯誤
+cyclomatic_complexity:
+  warning: 30
+  error: 100
+
+# 修飾詞排序
+modifier_order:
+  preferred_modifier_order:
+    - acl # public...
+    - setterACL # private(set)...
+    - override
+    - dynamic
+    - mutators # mutating
+    - lazy
+    - final
+    - required
+    - convenience
+    - typeMethods # static...
+    - owned # weak...
+  severity: error
+
+# 註解
+# missing_docs:
+#   error: 
+#     - private
+#     - fileprivate
+#     - internal
+#     - public
+#     - open
+
+# 型別名稱規則(class,struct,enum,protocol....)，此規則為大駝峰
+type_name:
+  min_length:
+    warning: 0
+    error: 0
+  max_length:
+    warning: 100
+    error: 100
+
+# 變數名稱規則，此規則可小駝峰、全大寫和底線式，需要客製化規則輔助
+identifier_name:
+  min_length:
+    warning: 0
+    error: 0
+  max_length:
+    warning: 100
+    error: 100
+  excluded: # 例外
+    - T # 泛型會用到
+    - Error # CMoneyResponseBase物件的屬性
+    - Success # Result<T>的列舉
+    - Code # CMoneyError的屬性
+    - Message # CMoneyError的屬性
+    - URL # URL為通用簡寫
+
+# 執行linting包含的路徑
+included:
+  - ${SRCROOT}
+
+# 執行linting忽略的路徑(優先度大於included)
+excluded:
+  - Pods
+
+# 似乎是試驗性質的分析器(目前不用管他...)
+analyzer_rules:
+  - explicit_self
+
+# 報錯類型 (xcode, json, csv, checkstyle, junit, html, emoji, sonarqube, markdown)
+reporter: "xcode"
