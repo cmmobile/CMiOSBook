@@ -56,12 +56,10 @@ chartView.data = chartData
 #### 先來分析第一部分（如下圖）
 ![YAxisRenderer_init](../.gitbook/assets/20201215-yAxisRenderer-class-init.png)
 
-\-分析\-
 - AxisRendererBase 是 YAxisRenderer，依照命名可以很看出所有軸線的Render都繼承 AxisRendererBase。
 - init 有三個參數 viewPortHandler / yAxis / transformer。
 你可能會比較有興趣 transformer: transformer 內部是提供Y軸 CGAffineTransform 轉移陣列的方法，如果需要將圖表轉方向的話你會需要了解這條屬性。
 但它今天不是我們的重點。
-<br>
 <br>
 <br>
 
@@ -169,7 +167,6 @@ class MyYAxis : YAxisRenderer {
             }else { color = .black }
 </code></pre>
 
-<br>
 <br>
 把它貼在 <br>
 let text = yAxis.getFormattedLabel(i) 後面，並且把 ChartUtils.drawText{} 最後端顏色參數改成 color
