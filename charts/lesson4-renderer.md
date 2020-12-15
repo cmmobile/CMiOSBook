@@ -133,6 +133,7 @@ class MyYAxis : YAxisRenderer {
             }else { color = .black }
 </code></pre>
 
+
 把它貼在  let text = yAxis.getFormattedLabel(i) 後面，把context.drawText最後端的參數改成 color
 <pre><code>for i in from..<to
         {
