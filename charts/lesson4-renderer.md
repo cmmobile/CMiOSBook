@@ -126,9 +126,11 @@ class MyYAxis : YAxisRenderer {
                   }else if  value > 100 &&  value <= 200 {
                      color = .red
                   }else if value > 201 &&  value <= 300 {
-                     color = .黃色
+                     color = .systemYellow
                   }else if value > 300 && value <= 400{
                      color = .blue
+                } else {
+                    color = .black
                 }
             }else { color = .black }
 </code></pre>
@@ -139,6 +141,6 @@ class MyYAxis : YAxisRenderer {
         {
             let text = axis.getFormattedLabel(i)
             ...(貼在這)
-            context.drawText(text, at: CGPoint(x: fixedPosition + xOffset, y: positions[i].y + offset), align: textAlign, attributes: [.font: labelFont, .foregroundColor: color])
+            ChartUtils.drawText(text, at: CGPoint(x: fixedPosition + xOffset, y: positions[i].y + offset), align: textAlign, attributes: [.font: labelFont, .foregroundColor: color])
         }
 </code></pre>
