@@ -10,6 +10,10 @@ description: Charts裡面Renderer(渲染器)介紹
 
 `本篇會假設你已經在專案中安裝Charts並了解 Charts 的基本繪製，自少已經了解 LineChartView上面的每個組件是什麼，以及基本的UIView底層運作`
 
+<br>
+<br>
+<br>
+
 ### Renderer 是什麼
 
 開始之前，我們先暸解一下Renderer (宣染器)是什麼。<br>
@@ -50,6 +54,7 @@ chartView.data = chartData
 
 
 <br>
+
 #### 先來分析第一部分（如下圖）
 ![YAxisRenderer_init](../.gitbook/assets/20201215-yAxisRenderer-class-init.png)
 
@@ -58,8 +63,6 @@ chartView.data = chartData
 - init 有三個參數 viewPortHandler / yAxis / transformer。
 你可能會比較有興趣 transformer: transformer 內部是提供Y軸 CGAffineTransform 轉移陣列的方法，如果需要將圖表轉方向的話你會需要了解這條屬性。
 但它今天不是我們的重點。
-<br>
-<br>
 <br>
 <br>
 <br>
@@ -100,6 +103,8 @@ func drawYLabels(...) {}
 <br>
 for- in 內，遍歷 stride(from: from, to: to, by: 1) 每一單位呼叫 drawText 繪圖，對照Y軸 就是一格一個label。<br> 
 知道原理後，我們只要在for-in迴圈內繪圖的前一刻，把數據顏色改成我們需要的就可以，既不會影響整個線圖的位子，改動的code最少也最安全。
+<br>
+<br>
 <br>
 
 ## 開始動工
