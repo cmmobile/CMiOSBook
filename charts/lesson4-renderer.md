@@ -33,10 +33,8 @@ chartView.data = chartData
 
 <br>
 <br>
-<br>
 
 #### 接著我們會試著客制Y軸標籤
-<br>
 <br>
 
 - Y值介於 0-100，黑色(字體顏色)
@@ -44,7 +42,6 @@ chartView.data = chartData
 - Y值介於 201-300，黃色
 - Y值介於 301-400，藍色
 - Y值介於 301-400，黑色
-<br>
 <br>
 
 `先來簡單分析一下 YAxisRenderer (直接在 XCode中搜尋 YAxisRenderer) `
