@@ -4,7 +4,7 @@ description: Charts裡面Renderer(渲染器)介紹
 
 # Lesson4 Renderer
 
-範例：[https://github.com/cmmobile/WWChartsDemo](https://github.com/cmmobile/WWChartsDemo)
+範例：[https://github.com/woodycatliu/ChartsRendererDemo](https://github.com/woodycatliu/ChartsRendererDemo)
 
 本篇已LineChartView 客制 yAxis 為例子，所有圖表的客制都大同小異，複寫之前先調出該類的Renderer就可以看出ㄧ二。
 
