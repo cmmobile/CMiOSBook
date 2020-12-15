@@ -44,7 +44,7 @@ chartView.data = chartData
 - Y值介於 301-400，黑色
 <br>
 
-`先來簡單分析一下 YAxisRenderer (直接在 XCode中搜尋 YAxisRenderer) `
+`先來看一下Charts包裡的 YAxisRenderer 內容 (直接在 XCode中搜尋 YAxisRenderer) `
 
 <br>
 第一次看一定會很頭暈，不用擔心我也是這樣。<br>
