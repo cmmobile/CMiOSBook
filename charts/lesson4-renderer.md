@@ -29,11 +29,11 @@ chartView.data = chartData
 
 <br>
 <br>
----
 <br>
 
 ##### 接著我們會試著客制Y軸標籤
-
+<br>
+<br>
 - Y值介於 0-100，黑色(字體顏色)
 - Y值介於 101-200，紅色
 - Y值介於 201-300，黃色
@@ -63,6 +63,7 @@ chartView.data = chartData
 <br>
 <br>
 <br>
+
 #### 第二部分
 
 YAxisRenderer 類別內有很多很多的func，我們試著 com + F 找找關鍵字 Label，找到兩個 func 看來我們要找的就是他們了。
@@ -101,7 +102,7 @@ for- in 內，遍歷 stride(from: from, to: to, by: 1) 每一單位呼叫 drawTe
 知道原理後，我們只要在for-in迴圈內繪圖的前一刻，把數據顏色改成我們需要的就可以，既不會影響整個線圖的位子，改動的code最少也最安全。
 <br>
 
-##### 開始動工
+## 開始動工
 
 <br>
 先創建一個自定義的 Y軸子類別。
@@ -123,20 +124,23 @@ class MyYAxis : YAxisRenderer {
 - Y值大於 400，黑色
 <br>
 <br>
+
 **要做的事情**
+
 <br>
 
 - 覆寫 drawYLabels()<br>
   * 細一點，改寫 drawYLabels() For-in迴圈內的代碼
 <br>
-偷懶一點，我們從 YAxisRenderer 把整個 drawYLabels 原原本本的複製到 MyYAxis ，前面加上 override
+偷懶一點，<br>
+我們從 YAxisRenderer 把整個 drawYLabels 原原本本的複製到 MyYAxis ，前面加上 override
 <br>
-
+<br>
 <pre><code>
 class MyYAxis : YAxisRenderer {
     override func drawYLabels(context: CGContext, fixedPosition: CGFloat, positions: [CGPoint], offset: CGFloat, textAlign: NSTextAlignment)
     {
-        ...(太長就不附上)
+        ...(太長就不附上了)
         }
     }
 }
