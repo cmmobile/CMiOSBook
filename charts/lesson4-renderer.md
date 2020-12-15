@@ -29,7 +29,9 @@ chartView.data = chartData
 
 <br>
 <br>
-- - -
+---
+<br>
+
 ##### 接著我們會試著客制Y軸標籤
 
 - Y值介於 0-100，黑色(字體顏色)
@@ -37,13 +39,17 @@ chartView.data = chartData
 - Y值介於 201-300，黃色
 - Y值介於 301-400，藍色
 - Y值介於 301-400，黑色
-
+<br>
+<br>
 
 `先來簡單分析一下 YAxisRenderer (直接在 XCode中搜尋 YAxisRenderer) `
 
-第一次看一定會很頭暈，不用擔心我也是這樣。
-沒關係我會帶你很快的進入狀況。
+<br>
+第一次看一定會很頭暈，不用擔心我也是這樣。<br>
+沒關係我會帶你很快的進入狀況。<br>
 
+
+<br>
 #### 先來分析第一部分（如下圖）
 ![YAxisRenderer_init](../.gitbook/assets/20201215-yAxisRenderer-class-init.png)
 
@@ -67,9 +73,11 @@ func drawYLabels(...) {}
 研究第一個 func renderAxisLabels(context: CGContext){} ，我發現在閉包末端呼叫了第二個func drawYLabels。
 很明顯的 enderAxisLabels() 只是先做繪圖前置作業，如 Y軸偏移亮、標籤文字的TextAlignment、標籤相對位子等的準備。
 有興趣的可以再仔細研究看看。
+<br>
 
 `我們拉到 drawYLabels() 解析一下它在做什麼 （建議看一下參數是什麼，這邊就不特別提到，都很好懂`
 
+<br>
 
 <pre><code>for i in stride(from: from, to: to, by: 1)
     {
@@ -83,16 +91,20 @@ func drawYLabels(...) {}
 <br>
 前半段很好懂，全部都是label相關屬性，直接跳到下半部的 for-in<br>
 看到一個新玩意: ChartUtils，看來它就是繪製整個圖表的底層的worker。<br>
+<br>
 
 `ChartUtils: 接收所有繪圖所必要的屬性，用 UIGraphicsContext執行繪圖`
 
+<br>
 for- in 內，遍歷 stride(from: from, to: to, by: 1) 每一單位呼叫 drawText 繪圖，對照Y軸 就是一格一個label。<br> 
 知道原理後，我們只要在for-in迴圈內繪圖的前一刻，把數據顏色改成我們需要的就可以，既不會影響整個線圖的位子，改動的code最少也最安全。
-
+<br>
 
 ##### 開始動工
 
+<br>
 先創建一個自定義的 Y軸子類別。
+<br>
 
 <pre><code>
 class MyYAxis : YAxisRenderer {
