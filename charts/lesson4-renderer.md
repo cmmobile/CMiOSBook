@@ -70,9 +70,10 @@ YAxisRenderer 類別內有很多很多的func，我們試著 com + F 找找關�
 func drawYLabels(...) {}
 </code></pre>
 
-研究第一個 func renderAxisLabels(context: CGContext){} ，我發現在閉包末端呼叫了第二個func drawYLabels。
-很明顯的 enderAxisLabels() 只是先做繪圖前置作業，如 Y軸偏移亮、標籤文字的TextAlignment、標籤相對位子等的準備。
-有興趣的可以再仔細研究看看。
+<br>
+第一個 func renderAxisLabels(context: CGContext){} ，發現在閉包末端呼叫了 func drawYLabels。<br>
+很明顯的 enderAxisLabels() 只是先做繪圖前置作業，如 Y軸偏移亮、標籤文字的TextAlignment、標籤相對位子等的準備。<br>
+有興趣的可以再仔細研究看看。<br>
 <br>
 
 `我們拉到 drawYLabels() 解析一下它在做什麼 （建議看一下參數是什麼，這邊就不特別提到，都很好懂`
@@ -124,10 +125,12 @@ class MyYAxis : YAxisRenderer {
 <br>
 **要做的事情**
 <br>
-\- 覆寫 drawYLabels()
- * 細一點，改寫 drawYLabels() For-in迴圈內的代碼
 
+- 覆寫 drawYLabels()<br>
+  * 細一點，改寫 drawYLabels() For-in迴圈內的代碼
+<br>
 偷懶一點，我們從 YAxisRenderer 把整個 drawYLabels 原原本本的複製到 MyYAxis ，前面加上 override
+<br>
 
 <pre><code>
 class MyYAxis : YAxisRenderer {
@@ -139,7 +142,7 @@ class MyYAxis : YAxisRenderer {
 }
 </code></pre>
 
-
+<br>
 接下來依照需求我們寫一個簡單的判斷式，就寫最簡單的方法。
 
 <pre><code>// 加上一個回圈。NSAttributedString 顏色改上自定義的 color 解決
@@ -159,13 +162,16 @@ class MyYAxis : YAxisRenderer {
             }else { color = .black }
 </code></pre>
 
-
-把它貼在  let text = yAxis.getFormattedLabel(i) 後面，把context.drawText最後端的參數改成 color
+<br>
+<br>
+把它貼在 <br>
+let text = yAxis.getFormattedLabel(i) 後面，並且把 ChartUtils.drawText{} 最後端顏色參數改成 color
 <pre><code> 
 for i in from..< to{ 
     let text = axis.getFormattedLabel(i)
         ...(貼在這)
-         ChartUtils.drawText(text, at: CGPoint(x: fixedPosition + xOffset, y: positions[i].y + offset), align: textAlign, attributes: [.font: labelFont, .foregroundColor: color])
+         ChartUtils.drawText(text, at: CGPoint(x: fixedPosition + xOffset, y: positions[i].y + <br>
+         offset), align: textAlign, attributes: [.font: labelFont, .foregroundColor: color])
     }
 </code></pre>
 
