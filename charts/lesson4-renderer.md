@@ -52,10 +52,11 @@ chartView.data = chartData
 - init 有三個參數 viewPortHandler / yAxis / transformer。
 你可能會比較有興趣 transformer: transformer 內部是提供Y軸 CGAffineTransform 轉移陣列的方法，如果需要將圖表轉方向的話你會需要了解這條屬性。
 但它今天不是我們的重點。
-
-
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
 #### 第二部分
 
 YAxisRenderer 類別內有很多很多的func，我們試著 com + F 找找關鍵字 Label，找到兩個 func 看來我們要找的就是他們了。
@@ -107,8 +108,10 @@ class MyYAxis : YAxisRenderer {
 - Y值介於 201-300，黃色
 - Y值介於 301-400，藍色
 - Y值大於 400，黑色
-
-**要做事情**
+<br>
+<br>
+**要做的事情**
+<br>
 \- 覆寫 drawYLabels()
  * 細一點，改寫 drawYLabels() For-in迴圈內的代碼
 
