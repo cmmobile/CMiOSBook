@@ -6,14 +6,14 @@ description: Charts裡面Renderer(渲染器)介紹
 
 範例：[https://github.com/woodycatliu/ChartsRendererDemo](https://github.com/woodycatliu/ChartsRendererDemo)
 
-本篇已LineChartView 客制 yAxis 為例子，所有圖表的客制都大同小異，複寫之前先調出該類的Renderer就可以看出ㄧ二。
+本篇已LineChartView 客制 yAxis 為例子，所有圖表的客制都大同小異，覆寫前先調出該類的Renderer就可以看出ㄧ二。
 
 `本篇會假設你已經在專案中安裝Charts並了解 Charts 的基本繪製，自少已經了解 LineChartView上面的每個組件是什麼，以及基本的UIView底層運作`
 
 ##### Renderer 是什麼
 
-開始之前，我們先暸解一下Renderer (宣染器)是什麼。
-已 UIView 為例子，一個繼承UIView的元件，在呈現畫面之前會調用 draw(_ rect:) 繪製，而draw 就是UIView的 Render。
+開始之前，我們先暸解一下Renderer (宣染器)是什麼。\n
+已 UIView 為例子，一個繼承UIView的元件，在呈現畫面之前會調用 draw(_ rect:) 繪製，而draw 就是UIView的 Render。\n
 而Renderer 顧名思義就是負責 ChartView 的繪製工作，即是個 ViewModer。
 
 在之前章節我們有試著畫出一些基本圖表，在繪製之前我們做了些動作，如下：
