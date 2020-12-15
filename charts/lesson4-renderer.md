@@ -136,17 +136,13 @@ class MyYAxis : YAxisRenderer {
 
 
 把它貼在  let text = yAxis.getFormattedLabel(i) 後面，把context.drawText最後端的參數改成 color
-<pre><code>for i in from..<to{ 
+<pre><code> 
+for i in from..< to{ 
     let text = axis.getFormattedLabel(i)
         ...(貼在這)
          ChartUtils.drawText(text, at: CGPoint(x: fixedPosition + xOffset, y: positions[i].y + offset), align: textAlign, attributes: [.font: labelFont, .foregroundColor: color])
     }
 </code></pre>
-
-
-
-
-
 
 
 
