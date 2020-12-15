@@ -12,8 +12,8 @@ description: Charts裡面Renderer(渲染器)介紹
 
 ##### Renderer 是什麼
 
-開始之前，我們先暸解一下Renderer (宣染器)是什麼。\n
-已 UIView 為例子，一個繼承UIView的元件，在呈現畫面之前會調用 draw(_ rect:) 繪製，而draw 就是UIView的 Render。\n
+開始之前，我們先暸解一下Renderer (宣染器)是什麼。<br>
+已 UIView 為例子，一個繼承UIView的元件，在呈現畫面之前會調用 draw(_ rect:) 繪製，而draw 就是UIView的 Render。
 而Renderer 顧名思義就是負責 ChartView 的繪製工作，即是個 ViewModer。
 
 在之前章節我們有試著畫出一些基本圖表，在繪製之前我們做了些動作，如下：
