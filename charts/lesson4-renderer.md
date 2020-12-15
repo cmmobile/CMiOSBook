@@ -23,7 +23,7 @@ var chartData = LineChartData(dataSet: dataSet)
 chartView.data = chartData
 </code></pre>
 
-我們簡單設定了數據，後續的工作都是Renerder在作業。
+簡單設定了數據，後續的工作都是Renerder在作業。
 
 ![簡易結構圖](../.gitbook/assets/20201215-Renderer-structure-diagram.png)
 
@@ -37,7 +37,7 @@ chartView.data = chartData
 - Y值介於 301-400，黑色
 
 
-`我們先來簡單分析一下 YAxisRenderer (直接在 XCode中搜尋 YAxisRenderer) `
+`先來簡單分析一下 YAxisRenderer (直接在 XCode中搜尋 YAxisRenderer) `
 
 第一次看一定會很頭暈，不用擔心我也是這樣。
 沒關係我會帶你很快的進入狀況。
@@ -74,7 +74,7 @@ func drawYLabels(...) {}
     }
 </code></pre>
 
-我們看到一個新玩意: ChartUtils，看來它就是繪製整個圖表的底層的worker。
+看到一個新玩意: ChartUtils，看來它就是繪製整個圖表的底層的worker。
 
 `ChartUtils: 接收所有繪圖所必要的屬性，用 UIGraphicsContext執行繪圖`
 
@@ -84,7 +84,7 @@ for- in 內，遍歷 stride(from: from, to: to, by: 1) 每一單位呼叫 drawTe
 
 ##### 開始動工
 
-我們先創建一個自定義的 Y軸子類別。
+先創建一個自定義的 Y軸子類別。
 
 <pre><code>
 class MyYAxis : YAxisRenderer {
@@ -100,7 +100,7 @@ class MyYAxis : YAxisRenderer {
 - Y值大於 400，黑色
 
 **要做事情**
-- 複寫 drawYLabels()
+- 覆寫 drawYLabels()
  * 細一點，改寫 drawYLabels() For-in迴圈內的代碼
 
 偷懶一點，我們從 YAxisRenderer 把整個 drawYLabels 原原本本的複製到 MyYAxis ，前面加上 override
