@@ -11,6 +11,7 @@
 ## 工具主題 <a id="ji-ben-gong-ju"></a>
 
 * [基本工具篇](ji-ben-gong-ju/ji-ben-gong-ju-pian.md)
+* [Git 篇](ji-ben-gong-ju/git-pian.md)
 
 ## 架構主題
 
