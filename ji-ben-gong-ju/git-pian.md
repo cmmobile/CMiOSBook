@@ -49,7 +49,7 @@ description: Git工具很多，找到適合自己的才是最重要的～
 
 #### 第三步：使用 Xcode 確認可以編譯成功，或是再次修正!!!
 
-#### 第四步：回到 SourceTree ，對檔案點擊右鍵，選擇 Resolve Conflicts &gt; Mark Resolved
+#### 第四步：回到 SourceTree ，對檔案點擊右鍵，選擇 Resolve Conflicts &gt; Mark Resolved 即可!!
 
 ![](../.gitbook/assets/jie-tu-20201228-xia-wu-5.27.04.png)
 
