@@ -33,5 +33,5 @@ NotificationCenter.default.post(name: Notification.Name.UIKeyboardWillShow, obje
 NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillShow, object: nil)
 ```
 
-參考文章：[https://objccn.io/issue-7-4/](https://objccn.io/issue-7-4/)
+
 
