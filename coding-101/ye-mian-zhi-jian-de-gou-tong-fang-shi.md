@@ -14,7 +14,7 @@ description: 學習如何解決多頁面傳遞資料的問題、或是包裝Mode
 #### 兩個類別之間傳遞資料，解法有以下方式：
 
 * Property
-  * 單向持有還OK，例如：DataManager 擁有 DataModel
+  * 單向持有還OK，例如：ViewController 擁有 View
   * 如果兩個類別互相擁有，則比較不建議，例如：父VC和子VC互相擁有
   * 缺點：兩個類別互相耦合，不符合物件導向設計原則和MVC設計
 * Static 物件或是 Singleton 模式
