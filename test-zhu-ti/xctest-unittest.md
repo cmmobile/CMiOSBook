@@ -70,3 +70,15 @@ func testPerformanceExample() {
 
 ![](../.gitbook/assets/image-1565243102802.43.59.png)
 
+## **如何看測試結果：**
+
+* **第一種：**過程中Console會顯示
+
+![](../.gitbook/assets/image-1565243479162.50.53.png)
+
+* 第二種：測試分頁\(對測試右鍵&gt;Jump to Report\)
+
+![](../.gitbook/assets/image-1565243522420.49.53.png)
+
+![](../.gitbook/assets/image-1565243565622.49.44.png)
+
