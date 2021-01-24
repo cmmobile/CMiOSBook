@@ -7,17 +7,11 @@
 
 ## **如何安裝**
 
-1.新增Target &gt; iOS Unit Testing Bundle
+![&#x65B0;&#x589E;Target &amp;gt; iOS Unit Testing Bundle](../.gitbook/assets/image-1565242075194.26.37.png)
 
-![](../.gitbook/assets/image-1565242075194.26.37.png)
+![&#x547D;&#x540D;Target&#x540D;&#x7A31;](../.gitbook/assets/image-1565242110322.27.12.png)
 
-2.命名Target名稱
-
-![](../.gitbook/assets/image-1565242110322.27.12.png)
-
-3.完成安裝
-
-![](../.gitbook/assets/image-1565242215497.29.49.png)
+![&#x5B8C;&#x6210;&#x5B89;&#x88DD;](../.gitbook/assets/image-1565242215497.29.49.png)
 
 ## **如何撰寫測試**
 
@@ -74,23 +68,21 @@ func testPerformanceExample() {
 
 ## **如何執行**
 
-* 第一種：右鍵點擊Run Test
+![&#x53F3;&#x9375;&#x9EDE;&#x64CA;Run Test](../.gitbook/assets/image-1565243084406.42.17.png)
 
-![](../.gitbook/assets/image-1565243084406.42.17.png)
-
-* 第二種：左鍵點擊播放小圖示
-
-![](../.gitbook/assets/image-1565243102802.43.59.png)
+![&#x5DE6;&#x9375;&#x9EDE;&#x64CA;&#x64AD;&#x653E;&#x5C0F;&#x5716;&#x793A;](../.gitbook/assets/image-1565243102802.43.59.png)
 
 ## **如何看測試結果：**
 
-* **第一種：**過程中Console會顯示
+![&#x904E;&#x7A0B;&#x4E2D;Console&#x6703;&#x986F;&#x793A;](../.gitbook/assets/image-1565243479162.50.53.png)
 
-![](../.gitbook/assets/image-1565243479162.50.53.png)
-
-* 第二種：測試分頁\(對測試右鍵&gt;Jump to Report\)
-
-![](../.gitbook/assets/image-1565243522420.49.53.png)
+![&#x6E2C;&#x8A66;&#x5206;&#x9801;\(&#x5C0D;&#x6E2C;&#x8A66;&#x53F3;&#x9375;&amp;gt;Jump to Report\)](../.gitbook/assets/image-1565243522420.49.53.png)
 
 ![](../.gitbook/assets/image-1565243565622.49.44.png)
+
+## **如何使用測試覆蓋率**
+
+![&#x8A2D;&#x5B9A;&#x7D71;&#x8A08;&#x6E2C;&#x8A66;&#x8986;&#x84CB;&#x7387;](../.gitbook/assets/image-1565243957171.58.17.png)
+
+![&#x67E5;&#x770B;&#x6E2C;&#x8A66;&#x8986;&#x84CB;&#x7387;](../.gitbook/assets/image-1565243676834.54.19.png)
 
