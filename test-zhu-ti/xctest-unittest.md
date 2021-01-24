@@ -58,7 +58,7 @@ func testPerformanceExample() {
 
 * 乾淨的架構 \( 請詳見 MVC 、 MVVM 等等架構 \)
 * 職責單一的物件
-* 抽離檔案系統、資料庫、遠端資料
+* 抽離檔案系統 \( UserDefault or File \)、資料庫、遠端資料
 
 對 Model 測試
 
