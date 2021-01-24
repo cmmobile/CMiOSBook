@@ -60,6 +60,18 @@ func testPerformanceExample() {
 }
 ```
 
+## 如何把程式寫成可測試
+
+* 乾淨的架構 \( 請詳見 MVC 、 MVVM 等等架構 \)
+* 職責單一的物件
+* 抽離檔案系統、資料庫、遠端資料
+
+對 Model 測試
+
+
+
+對 ViewModel 或是 Manager 測試
+
 ## **如何執行**
 
 * 第一種：右鍵點擊Run Test
