@@ -78,3 +78,8 @@ func testDataManagerGetData() throws {
 
 ![](../.gitbook/assets/testing-pyramid.png)
 
+## 延伸議題
+
+* 測試驅動開發\(TDD\)
+* 測試案例\(Test case\)
+
