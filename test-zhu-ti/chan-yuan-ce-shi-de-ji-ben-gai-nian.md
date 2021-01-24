@@ -7,8 +7,13 @@
 ```swift
 func testToolIsNumberTrue() throws {
     
+    // Arrange：準備
     let tool = Tool()
+    
+    // Act：操作
     let result = tool.isNumber(input: "1")
+    
+    // Assert：驗證
     XCTAssert(result)
 }
 ```
