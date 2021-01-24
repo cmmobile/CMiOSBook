@@ -71,3 +71,5 @@ func testDataManagerGetData() throws {
 
 ## 測試金字塔 \(testing pyramid\)
 
+![](../.gitbook/assets/testing-pyramid.png)
+
