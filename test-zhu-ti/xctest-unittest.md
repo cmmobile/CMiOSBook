@@ -93,12 +93,12 @@ func testNasaData() throws {
 #### 對 API 做異步測試：這算是整合測試，不是單元測試
 
 ```swift
-func testDataManagerGetData() throws {
+func testDataManagerGetNasaData() throws {
     
     let expect = expectation(description: "GetData")
     
     let dataManager = DataManager()
-    dataManager.getData {
+    dataManager.getNasaData {
         result in
         switch result{
         case .success(_):
@@ -113,7 +113,102 @@ func testDataManagerGetData() throws {
 }
 ```
 
-對 ViewModel 或是 Manager 測試，用 Protocol 抽離實作
+#### 對 ViewModel 或是 Manager 測試：當遇到 API 或資料庫，可用 Protocol 抽離實作並依賴注入\(DI\)
+
+建立呼叫 DataProvider 的 Protocol，並用依賴注入\(DI\)
+
+```swift
+class DataProvider: DataProviderDelegate{
+    
+    func getData(url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void){
+        let task = URLSession.shared.dataTask(with: url) {
+            (data, response, error) in completionHandler(data, response, error)
+        }
+        task.resume()
+    }
+}
+
+protocol DataProviderDelegate: class {
+    func getData(url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+}
+
+class DataManagerWithDI{
+    
+    enum DataManagerError: Error {
+        case urlError
+        case noData
+    }
+    
+    weak var dataProvider: DataProviderDelegate?
+    
+    init(dataProvider: DataProviderDelegate) {
+        self.dataProvider = dataProvider
+    }
+    
+    func getNasaData(completionHandler: @escaping (Result<[NasaData], Error>) -> Void) {
+        
+        guard let url = URL(string: "https://raw.githubusercontent.com/cmmobile/NasaDataSet/main/apod.json") else {
+            completionHandler(.failure(DataManagerError.urlError))
+            return
+        }
+        dataProvider?.getData(url: url) {
+            (data, response, error) in
+            if let error = error {
+                completionHandler(.failure(error))
+                return
+            }
+            if let data = data,
+               let nasaDataArray = try? JSONDecoder().decode([NasaData].self, from: data) {
+                completionHandler(.success(nasaDataArray))
+            } else {
+                completionHandler(.failure(DataManagerError.noData))
+            }
+        }
+    }
+}
+```
+
+測試的時候，建立 FakeDataProvider ，注入並且測試
+
+```swift
+func testDataManagerWithDIGetNasaData() throws {
+    
+    let fakeDataProvider = FakeDataProvider()
+    let dataManagerWithDI = DataManagerWithDI(dataProvider: fakeDataProvider)
+    dataManagerWithDI.dataProvider = fakeDataProvider
+    dataManagerWithDI.getNasaData {
+        result in
+        switch result{
+        case .success(_):
+            XCTAssert(true)
+        case .failure(_):
+            XCTAssert(false)
+        }
+    }
+}
+
+class FakeDataProvider: DataProviderDelegate{
+    
+    func getData(url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void){
+        
+        let dataString = """
+        [{
+        "description": "The past year was extraordinary for the discovery of extraterrestrial fountains and flows -- some offering new potential in the search for liquid water and the origin of life beyond planet Earth.. Increased evidence was uncovered that fountains spurt not only from Saturn's moon Enceladus, but from the dunes of Mars as well. Lakes were found on Saturn's moon Titan, and the residual of a flowing liquid was discovered on the walls of Martian craters. The diverse Solar System fluidity may involve forms of slushy water-ice, methane, or sublimating carbon dioxide. Pictured above, the light-colored path below the image center is hypothesized to have been created sometime in just the past few years by liquid water flowing across the surface of Mars.",
+        "copyright": "MGS, MSSS, JPL, NASA",
+        "title": "A Year of Extraterrestrial Fountains and Flows",
+        "url": "https://apod.nasa.gov/apod/image/0612/flow_mgs.jpg",
+        "apod_site": "https://apod.nasa.gov/apod/ap061231.html",
+        "date": "2006-12-31",
+        "media_type": "image",
+        "hdurl": "https://apod.nasa.gov/apod/image/0612/flow_mgs_big.jpg"
+        }]
+        """
+            
+        let data = Data(dataString.utf8)
+        completionHandler(data, nil ,nil)
+    }
+}
+```
 
 ## **如何執行**
 
