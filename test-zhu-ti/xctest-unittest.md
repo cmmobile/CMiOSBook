@@ -59,6 +59,7 @@ func testPerformanceExample() {
 * 乾淨的架構 \( 請詳見 MVC 、 MVVM 等等架構 \)
 * 職責單一的物件
 * 抽離檔案系統 \( UserDefault or File \)、資料庫 \( DataBase \)、遠端資料 \( Api \)
+  * [https://cocoapods.org/pods/MockUserDefaults](https://cocoapods.org/pods/MockUserDefaults)
 
 ## 常見的測試種類
 
@@ -229,4 +230,8 @@ class FakeDataProvider: DataProviderDelegate{
 ![&#x8A2D;&#x5B9A;&#x7D71;&#x8A08;&#x6E2C;&#x8A66;&#x8986;&#x84CB;&#x7387;](../.gitbook/assets/image-1565243957171.58.17.png)
 
 ![&#x67E5;&#x770B;&#x6E2C;&#x8A66;&#x8986;&#x84CB;&#x7387;](../.gitbook/assets/image-1565243676834.54.19.png)
+
+## 推薦書單
+
+IOS Unit Testing by Example: Xctest Tips and Techniques Using Swift - \([https://www.tenlong.com.tw/products/9789864342471?list\_name=srh](https://www.tenlong.com.tw/products/9781680506815)\)
 
