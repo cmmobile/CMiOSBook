@@ -60,11 +60,60 @@ func testPerformanceExample() {
 * 職責單一的物件
 * 抽離檔案系統 \( UserDefault or File \)、資料庫 \( DataBase \)、遠端資料 \( Api \)
 
-對 Model 測試
+## 常見的測試種類
 
+#### 對 Model 測試：可測試 Model 的建構式或是方法
 
+```swift
+func testNasaData() throws {
+    
+    let rawResponse = """
+    {
+    "description": "The past year was extraordinary for the discovery of extraterrestrial fountains and flows -- some offering new potential in the search for liquid water and the origin of life beyond planet Earth.. Increased evidence was uncovered that fountains spurt not only from Saturn's moon Enceladus, but from the dunes of Mars as well. Lakes were found on Saturn's moon Titan, and the residual of a flowing liquid was discovered on the walls of Martian craters. The diverse Solar System fluidity may involve forms of slushy water-ice, methane, or sublimating carbon dioxide. Pictured above, the light-colored path below the image center is hypothesized to have been created sometime in just the past few years by liquid water flowing across the surface of Mars.",
+    "copyright": "MGS, MSSS, JPL, NASA",
+    "title": "A Year of Extraterrestrial Fountains and Flows",
+    "url": "https://apod.nasa.gov/apod/image/0612/flow_mgs.jpg",
+    "apod_site": "https://apod.nasa.gov/apod/ap061231.html",
+    "date": "2006-12-31",
+    "media_type": "image",
+    "hdurl": "https://apod.nasa.gov/apod/image/0612/flow_mgs_big.jpg"
+    }
+    """
+    
+    guard let data = rawResponse.data(using: .utf8) else{
+        XCTAssert(false)
+        return
+    }
+    let nasaData = try? JSONDecoder().decode(NasaData.self, from: data)
+    XCTAssertEqual(nasaData?.date, "2006-12-31")
+    XCTAssertEqual(nasaData?.mediaType, "image")
+}
+```
 
-對 ViewModel 或是 Manager 測試
+#### 對 API 做異步測試：這算是整合測試，不是單元測試
+
+```swift
+func testDataManagerGetData() throws {
+    
+    let expect = expectation(description: "GetData")
+    
+    let dataManager = DataManager()
+    dataManager.getData {
+        result in
+        switch result{
+        case .success(_):
+            XCTAssert(true)
+        case .failure(_):
+            XCTAssert(false)
+        }
+        expect.fulfill()
+    }
+    
+    wait(for: [expect], timeout: 10.0)
+}
+```
+
+對 ViewModel 或是 Manager 測試，用 Protocol 抽離實作
 
 ## **如何執行**
 
