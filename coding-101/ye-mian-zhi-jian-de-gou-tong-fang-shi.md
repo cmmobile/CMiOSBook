@@ -25,7 +25,7 @@ description: 學習如何解決多頁面傳遞資料的問題、或是包裝Mode
   * 可能適用的時機
     * 會員資料的運用
 
-```text
+```swift
 class UserManager {
 
     private init() {}
@@ -46,7 +46,7 @@ class UserManager {
   * 可能適用的時機
     * 到設定頁面，選取設定後，改變前一個頁面樣式為所選設定 
 
-```text
+```swift
  class ViewController: UIViewController {
 
     let label = UILabel()
@@ -81,7 +81,7 @@ class UserManager {
 }
 ```
 
-```text
+```swift
 protocol OptionViewControllerDelegate: class {
     func changeState(_ string: String)
 }
@@ -117,7 +117,7 @@ class OptionViewController: UIViewController {
   * 可能適用的時機
     * 在 vc 利用 model 打 api ，api 回來後，傳回 vc 更改畫面更改為api所獲得資料， 
 
-```text
+```swift
 class ViewController: UIViewController {
 
     let model = VCModel()
@@ -139,7 +139,7 @@ class ViewController: UIViewController {
 }
 ```
 
-```text
+```swift
 class VCModel {
 
     func callApi(completion: ((String)->())) {
@@ -177,7 +177,7 @@ class VCModel {
 * KVO\([官方說明文件](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)\)
   * 監聽某個數值的改變，視情況使用
 
-```text
+```swift
 class OffsetToObserve: NSObject {
     @objc dynamic var offset: Int = .zero
     func update(_ offset: Int) {
@@ -186,7 +186,7 @@ class OffsetToObserve: NSObject {
 }
 ```
 
-```text
+```swift
 class KVOTest {
 
     private var observation: NSKeyValueObservation?
