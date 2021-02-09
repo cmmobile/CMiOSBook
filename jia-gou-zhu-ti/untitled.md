@@ -44,6 +44,8 @@ Todo - 把資料補完
 
 聽說 Agoda 是用這個架構
 
+![](../.gitbook/assets/jie-tu-20210209-shang-wu-10.54.20.png)
+
 Todo - 把資料補完
 
 ##  參考資料
