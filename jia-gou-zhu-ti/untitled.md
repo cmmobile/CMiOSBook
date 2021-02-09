@@ -58,5 +58,7 @@ Todo - 把資料補完
   * [iPlayground 2019 \| 從MVC到MVVM，再到MVVMC的開發經驗分享](https://www.youtube.com/watch?v=0GQXVfahdI4)
 * 其他架構
   * [Uber/RIBs](https://github.com/uber/RIBs)
+  * \*\*\*\*[**Uber 新架构 RIBs 的前世今生**](https://hongruqi.github.io/2019/02/22/Uber%20RIBs%20%E6%9E%B6%E6%9E%84/)\*\*\*\*
+  * \*\*\*\*[**浅谈swift - uber/RIBs理解**](https://www.jianshu.com/p/2914875505fd)\*\*\*\*
   * [SwiftUI data flow - Redux](https://developer.apple.com/documentation/swiftui/state-and-data-flow)
 
