@@ -6,16 +6,16 @@
 * **Unit Testing Bundle：Xcode內建用來做單元測試的Target**
 
 ## **如何建立 Unit Tests Target**
-1. 當我們在建立專案時，Xcode 會貼心的提醒要不要自動建立 Unit / UI Tests，只要勾選 Include Tests 則會自動產生 Unit / UI Tests 的 Target。
-2. 但若在上述步驟忘了勾選，或是後來才決定要加入 Unit Tests，則也可以透過手動新增Unit Tests 的 Target。
-3. 手動新增的 Target 需要手動 Import 被測試的 Target。
+1. 當我們在建立專案時，Xcode 會貼心的提醒要不要自動建立 Unit / UI Tests，只要勾選 Include Tests 則會自動產生 Unit / UI Tests 的 Target(圖1)。
+2. 但若在上述步驟忘了勾選，或是後來才決定要加入 Unit Tests，則也可以透過手動新增Unit Tests 的 Target(圖2)。
+3. 手動新增的 Target 需要手動 Import 被測試的 Target(圖3)。
 ```@testable import Demo```
 
-![1VvkZFH](https://user-images.githubusercontent.com/36924807/113652165-dae38680-96c5-11eb-8eca-bb0044affad9.png)
+![圖1](https://user-images.githubusercontent.com/36924807/113652165-dae38680-96c5-11eb-8eca-bb0044affad9.png)
 
-![zUBfFPi](https://user-images.githubusercontent.com/36924807/113652163-d9b25980-96c5-11eb-921a-a2b5a630d80f.png)
+![圖2](https://user-images.githubusercontent.com/36924807/113652163-d9b25980-96c5-11eb-921a-a2b5a630d80f.png)
 
-![gCHX5iY](https://user-images.githubusercontent.com/36924807/113652157-d61ed280-96c5-11eb-94f0-3e483cd449b4.png)
+![圖3](https://user-images.githubusercontent.com/36924807/113652157-d61ed280-96c5-11eb-94f0-3e483cd449b4.png)
 
 ## 命名
 * 必須以前綴**test**開頭、**不帶參數、不返回值**。
@@ -100,7 +100,7 @@ class SetUpAndTearDownExampleTestCase: XCTestCase {
 }
 ```
 
-![hfyYqDy](https://user-images.githubusercontent.com/36924807/113652418-56ddce80-96c6-11eb-97e6-d0d7a8cec2e8.png)
+![執行順序](https://user-images.githubusercontent.com/36924807/113652418-56ddce80-96c6-11eb-97e6-d0d7a8cec2e8.png)
 
 * **什麼時候使用addTeardownBlock()？**
 通常我們會在tearDown()中清除設定，但是tearDown()會在每項測試完成後執行。如果我們只是需要在某一項測試中清除某項設定或資料，就可以使用addTeardownBlock()，針對特定的測試項目進行處理。
@@ -135,9 +135,9 @@ func test_is_valid_username() throws {
 
 >[官方文件](https://developer.apple.com/documentation/xctest#2870839)
 
-![mCPHrgs](https://user-images.githubusercontent.com/36924807/113652695-dc617e80-96c6-11eb-8adc-645978e80286.png)
+![XCTAssert](https://user-images.githubusercontent.com/36924807/113652695-dc617e80-96c6-11eb-8adc-645978e80286.png)
 
-![2cZTmHm](https://user-images.githubusercontent.com/36924807/113652723-ea170400-96c6-11eb-90d3-7c2542154021.png)
+![XCTAssertEqual提供錯誤訊息](https://user-images.githubusercontent.com/36924807/113652723-ea170400-96c6-11eb-90d3-7c2542154021.png)
 
 
 ## 如何把程式寫成可測試
@@ -333,21 +333,23 @@ class PerformanceTests: XCTestCase {
 * 性能測試需要設置Baseline來驗證是否通過測試，沒有設置的會提示No baseline average for Time。
 * 點擊左側灰色菱形圖示，可以看到更多訊息、設置Baseline。
 
-![blp1G3F](https://user-images.githubusercontent.com/36924807/113653072-b2f52280-96c7-11eb-950d-b135d23890a6.png)
+![性能測試](https://user-images.githubusercontent.com/36924807/113653072-b2f52280-96c7-11eb-950d-b135d23890a6.png)
 
 ## **測試覆蓋率 Code Coverage**
 
-![mZZlyO5](https://user-images.githubusercontent.com/36924807/113653311-30209780-96c8-11eb-885a-509214745dd9.png)
+![步驟1：選擇Edit Scheme](https://user-images.githubusercontent.com/36924807/113653311-30209780-96c8-11eb-885a-509214745dd9.png)
 
-![dH5XdOw](https://user-images.githubusercontent.com/36924807/113653338-3ca4f000-96c8-11eb-8d6d-9f58b30ff6e8.png)
+![步驟2：Test->Options->勾選Code Coverage](https://user-images.githubusercontent.com/36924807/113653338-3ca4f000-96c8-11eb-8d6d-9f58b30ff6e8.png)
 
-![GdriLb4](https://user-images.githubusercontent.com/36924807/113653371-4dedfc80-96c8-11eb-9a51-c2d6327fc512.png)
+* Run Test
 
-![CwUhS7H](https://user-images.githubusercontent.com/36924807/113653420-5fcf9f80-96c8-11eb-93ca-18ba4f580e9b.png)
+![步驟3：Report navigator->Coverage](https://user-images.githubusercontent.com/36924807/113653371-4dedfc80-96c8-11eb-9a51-c2d6327fc512.png)
 
-![wg2hvor](https://user-images.githubusercontent.com/36924807/113653439-69f19e00-96c8-11eb-81bb-b2813e8a0ce7.png)
+![步驟4：點擊Coverage可以看到所有檔案的Code Coverage](https://user-images.githubusercontent.com/36924807/113653420-5fcf9f80-96c8-11eb-93ca-18ba4f580e9b.png)
 
-![xjt6QKh](https://user-images.githubusercontent.com/36924807/113653460-737b0600-96c8-11eb-9a89-93e810ed1574.jpeg)
+![步驟5：點擊下拉，可以看到每一個方法的Code Coverage](https://user-images.githubusercontent.com/36924807/113653439-69f19e00-96c8-11eb-81bb-b2813e8a0ce7.png)
+
+![步驟6：進入某一檔案，綠色表示有被測試到程式碼，紅色表示沒有被測試到](https://user-images.githubusercontent.com/36924807/113653460-737b0600-96c8-11eb-9a89-93e810ed1574.jpeg)
 
 ## 100% Coverage?
 * 100％的覆蓋率並不是我們主要的目標，至少確認重要的邏輯已經被測試。
