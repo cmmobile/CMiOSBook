@@ -12,7 +12,9 @@
 ```@testable import Demo```
 
 ![1VvkZFH](https://user-images.githubusercontent.com/36924807/113652165-dae38680-96c5-11eb-8eca-bb0044affad9.png)
+
 ![zUBfFPi](https://user-images.githubusercontent.com/36924807/113652163-d9b25980-96c5-11eb-921a-a2b5a630d80f.png)
+
 ![gCHX5iY](https://user-images.githubusercontent.com/36924807/113652157-d61ed280-96c5-11eb-94f0-3e483cd449b4.png)
 
 ## 命名
@@ -32,7 +34,9 @@ testValidCallToiTunesGetsHTTPStatusCode200()
 ## Setup and Teardown
 * setUp()：在測試執行前做一些初始化的設定
 * tearDown()：測試結束後，在這裡清除資料或設定，確保不會留下任何可能影響後續測試的東西。
+
 > [官方文件](https://developer.apple.com/documentation/xctest/xctestcase/understanding_setup_and_teardown_for_test_methods)
+
 ```swift 
 class SetUpAndTearDownExampleTestCase: XCTestCase {
     
@@ -103,7 +107,9 @@ class SetUpAndTearDownExampleTestCase: XCTestCase {
 
 ## Throwing methods
 * 測試方法也可以也可以拋出錯誤，只要被測試的方法中拋出錯誤，就可以使用合適的XCTAssert來驗證。
+
 > [Error Handling](https://www.appcoda.com.tw/swift-error-handling/)
+
 ```swift
 func test_username_is_nil() throws {
     let expectedError = ValidationError.invalidValue
@@ -126,9 +132,11 @@ func test_is_valid_username() throws {
 ## XCTAssert
 * 選擇正確的assert很重要。
 * 不同的assert，提供不同的失敗原因和訊息，可以幫助我們更快的識別失敗的測試。
+
 >[官方文件](https://developer.apple.com/documentation/xctest#2870839)
 
 ![mCPHrgs](https://user-images.githubusercontent.com/36924807/113652695-dc617e80-96c6-11eb-8adc-645978e80286.png)
+
 ![2cZTmHm](https://user-images.githubusercontent.com/36924807/113652723-ea170400-96c6-11eb-90d3-7c2542154021.png)
 
 
@@ -165,6 +173,7 @@ func testNasaData() throws {
         XCTAssertEqual(nasaData.date, "2006-12-31")
         XCTAssertEqual(nasaData.mediaType, "image")
     }
+}
 ```
 
 #### 對 API 做異步測試：使用 XCTestExpectation（這算是整合測試，不是單元測試）
@@ -329,10 +338,15 @@ class PerformanceTests: XCTestCase {
 ## **測試覆蓋率 Code Coverage**
 
 ![mZZlyO5](https://user-images.githubusercontent.com/36924807/113653311-30209780-96c8-11eb-885a-509214745dd9.png)
+
 ![dH5XdOw](https://user-images.githubusercontent.com/36924807/113653338-3ca4f000-96c8-11eb-8d6d-9f58b30ff6e8.png)
+
 ![GdriLb4](https://user-images.githubusercontent.com/36924807/113653371-4dedfc80-96c8-11eb-9a51-c2d6327fc512.png)
+
 ![CwUhS7H](https://user-images.githubusercontent.com/36924807/113653420-5fcf9f80-96c8-11eb-93ca-18ba4f580e9b.png)
+
 ![wg2hvor](https://user-images.githubusercontent.com/36924807/113653439-69f19e00-96c8-11eb-81bb-b2813e8a0ce7.png)
+
 ![xjt6QKh](https://user-images.githubusercontent.com/36924807/113653460-737b0600-96c8-11eb-9a89-93e810ed1574.jpeg)
 
 ## 100% Coverage?
@@ -341,7 +355,7 @@ class PerformanceTests: XCTestCase {
 
 ## 推薦書單
 
-1. IOS Unit Testing by Example: Xctest Tips and Techniques Using Swift - \([https://www.tenlong.com.tw/products/9789864342471?list\_name=srh](https://www.tenlong.com.tw/products/9781680506815)\)
+1. [IOS Unit Testing by Example: Xctest Tips and Techniques Using Swift](https://www.tenlong.com.tw/products/9789864342471?list\_name=srh](https://www.tenlong.com.tw/products/9781680506815)
 2. [Test-Driven iOS Development with Swift 4](http://englishonlineclub.com/pdf/Test-Driven%20iOS%20Development%20with%20Swift%204%20-%20Write%20Swift%20code%20that%20is%20maintainable,%20flexible,%20and%20easily%20extensible%20%5BEnglishOnlineClub.com%5D.pdf)
 
 ## Reference
