@@ -357,10 +357,6 @@ class PerformanceTests: XCTestCase {
 * 100％的覆蓋率並不是我們主要的目標，至少確認重要的邏輯已經被測試。
 * 達到100％可能會非常耗時、精力，而效益可能不那麼大。
 
-## 是否需要測試private method?
-* [單元測試：是否針對非 public method 進行測試？](https://dotblogs.com.tw/hatelove/2012/07/19/why-you-should-not-write-unit-test-with-private-and-protected-method)
-* [Testing private methods and variables in Swift](https://www.avanderlee.com/swift/testing-private-methods-variables/)
-
 ## 推薦書單
 
 1. [IOS Unit Testing by Example: Xctest Tips and Techniques Using Swift](https://www.tenlong.com.tw/products/9781680506815)
