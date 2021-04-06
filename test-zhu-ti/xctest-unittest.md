@@ -150,7 +150,7 @@ func test_is_valid_username() throws {
 
 ## 常見的測試種類
 
-#### 對 Model 測試：可測試 Model 的建構式或是方法
+#### 1. 對 Model 測試：可測試 Model 的建構式或是方法
 
 ```swift
 func testNasaData() throws {
@@ -177,7 +177,7 @@ func testNasaData() throws {
 }
 ```
 
-#### 對 API 做異步測試：使用 XCTestExpectation（這算是整合測試，不是單元測試）
+#### 2. 對 API 做異步測試：使用 XCTestExpectation（這算是整合測試，不是單元測試）
 
 ```swift
 func testDataManagerGetNasaData() {
@@ -203,7 +203,7 @@ func testDataManagerGetNasaData() {
 }
 ```
 
-#### 對 ViewModel 或是 Manager 測試：當遇到 API 或資料庫，可用 Protocol 抽離實作並依賴注入\(DI\)
+#### 3. 對 ViewModel 或是 Manager 測試：當遇到 API 或資料庫，可用 Protocol 抽離實作並依賴注入\(DI\)
 
 建立呼叫 DataProvider 的 Protocol，並用依賴注入\(DI\)
 
@@ -300,7 +300,7 @@ class FakeDataProvider: DataProviderDelegate{
 }
 ```
 
-#### 性能測試：使用Measure Block
+#### 4. 性能測試：使用Measure Block
 
 ```swift
 class PerformanceTests: XCTestCase {
