@@ -22,6 +22,7 @@
 * 讓名稱具有**描述性**，透過命名了解測試方法將要測試的內容。
 * 好的命名可以快速識別失敗的測試、幫助辨識是否已經測試過某種腳本或一段代碼。
 * 當測試失敗時，我們想要知道甚麼？
+
 1. 我們正在測試什麼？
 2. 在什麼情況下？
 3. 預期的結果是什麼？
@@ -32,7 +33,7 @@ testValidCallToiTunesGetsHTTPStatusCode200()
 ```
 
 ## Setup and Teardown
-* setUp()：在測試執行前做一些初始化的設定
+* setUp()：在測試執行前做一些初始化的設定。
 * tearDown()：測試結束後，在這裡清除資料或設定，確保不會留下任何可能影響後續測試的東西。
 
 > [官方文件](https://developer.apple.com/documentation/xctest/xctestcase/understanding_setup_and_teardown_for_test_methods)
@@ -108,7 +109,7 @@ class SetUpAndTearDownExampleTestCase: XCTestCase {
 ## Throwing methods
 * 測試方法也可以也可以拋出錯誤，只要被測試的方法中拋出錯誤，就可以使用合適的XCTAssert來驗證。
 
-> [Error Handling](https://www.appcoda.com.tw/swift-error-handling/)
+> [回顧Error Handling](https://www.appcoda.com.tw/swift-error-handling/)
 
 ```swift
 func test_username_is_nil() throws {
@@ -153,26 +154,26 @@ func test_is_valid_username() throws {
 
 ```swift
 func testNasaData() throws {
-        
-        let rawResponse = """
-        {
-        "description": "The past year was extraordinary for the discovery of extraterrestrial fountains and flows -- some offering new potential in the search for liquid water and the origin of life beyond planet Earth.. Increased evidence was uncovered that fountains spurt not only from Saturn's moon Enceladus, but from the dunes of Mars as well. Lakes were found on Saturn's moon Titan, and the residual of a flowing liquid was discovered on the walls of Martian craters. The diverse Solar System fluidity may involve forms of slushy water-ice, methane, or sublimating carbon dioxide. Pictured above, the light-colored path below the image center is hypothesized to have been created sometime in just the past few years by liquid water flowing across the surface of Mars.",
-        "copyright": "MGS, MSSS, JPL, NASA",
-        "title": "A Year of Extraterrestrial Fountains and Flows",
-        "url": "https://apod.nasa.gov/apod/image/0612/flow_mgs.jpg",
-        "apod_site": "https://apod.nasa.gov/apod/ap061231.html",
-        "date": "2006-12-31",
-        "media_type": "image",
-        "hdurl": "https://apod.nasa.gov/apod/image/0612/flow_mgs_big.jpg"
-        }
-        """
-        
-        let data = try XCTUnwrap(rawResponse.data(using: .utf8))
-        let nasaData = try XCTUnwrap(JSONDecoder().decode(NasaData.self, from: data))
-        
-        XCTAssertEqual(nasaData.date, "2006-12-31")
-        XCTAssertEqual(nasaData.mediaType, "image")
+
+    let rawResponse = """
+    {
+    "description": "The past year was extraordinary for the discovery of extraterrestrial fountains and flows -- some offering new potential in the search for liquid water and the origin of life beyond planet Earth.. Increased evidence was uncovered that fountains spurt not only from Saturn's moon Enceladus, but from the dunes of Mars as well. Lakes were found on Saturn's moon Titan, and the residual of a flowing liquid was discovered on the walls of Martian craters. The diverse Solar System fluidity may involve forms of slushy water-ice, methane, or sublimating carbon dioxide. Pictured above, the light-colored path below the image center is hypothesized to have been created sometime in just the past few years by liquid water flowing across the surface of Mars.",
+    "copyright": "MGS, MSSS, JPL, NASA",
+    "title": "A Year of Extraterrestrial Fountains and Flows",
+    "url": "https://apod.nasa.gov/apod/image/0612/flow_mgs.jpg",
+    "apod_site": "https://apod.nasa.gov/apod/ap061231.html",
+    "date": "2006-12-31",
+    "media_type": "image",
+    "hdurl": "https://apod.nasa.gov/apod/image/0612/flow_mgs_big.jpg"
     }
+    """
+    
+    // XCTUnwrap嘗試解開可選的內容，如果可選的內容為nil，則會拋出錯誤（並因此導致測試失敗）
+    let data = try XCTUnwrap(rawResponse.data(using: .utf8))
+    let nasaData = try XCTUnwrap(JSONDecoder().decode(NasaData.self, from: data))
+        
+    XCTAssertEqual(nasaData.date, "2006-12-31")
+    XCTAssertEqual(nasaData.mediaType, "image")
 }
 ```
 
@@ -333,7 +334,7 @@ class PerformanceTests: XCTestCase {
 * 性能測試需要設置Baseline來驗證是否通過測試，沒有設置的會提示No baseline average for Time。
 * 點擊左側灰色菱形圖示，可以看到更多訊息、設置Baseline。
 
-![性能測試](https://user-images.githubusercontent.com/36924807/113653072-b2f52280-96c7-11eb-950d-b135d23890a6.png)
+![性能測試設置Baseline](https://user-images.githubusercontent.com/36924807/113653072-b2f52280-96c7-11eb-950d-b135d23890a6.png)
 
 ## **測試覆蓋率 Code Coverage**
 
@@ -341,15 +342,15 @@ class PerformanceTests: XCTestCase {
 
 ![步驟2：Test->Options->勾選Code Coverage](https://user-images.githubusercontent.com/36924807/113653338-3ca4f000-96c8-11eb-8d6d-9f58b30ff6e8.png)
 
-* Run Test
+* 步驟3：Run Test
 
-![步驟3：Report navigator->Coverage](https://user-images.githubusercontent.com/36924807/113653371-4dedfc80-96c8-11eb-9a51-c2d6327fc512.png)
+![步驟4：Report navigator->Coverage](https://user-images.githubusercontent.com/36924807/113653371-4dedfc80-96c8-11eb-9a51-c2d6327fc512.png)
 
-![步驟4：點擊Coverage可以看到所有檔案的Code Coverage](https://user-images.githubusercontent.com/36924807/113653420-5fcf9f80-96c8-11eb-93ca-18ba4f580e9b.png)
+![步驟5：點擊Coverage可以看到所有檔案的Code Coverage](https://user-images.githubusercontent.com/36924807/113653420-5fcf9f80-96c8-11eb-93ca-18ba4f580e9b.png)
 
-![步驟5：點擊下拉，可以看到每一個方法的Code Coverage](https://user-images.githubusercontent.com/36924807/113653439-69f19e00-96c8-11eb-81bb-b2813e8a0ce7.png)
+![步驟6：點擊下拉，可以看到每一個方法的Code Coverage](https://user-images.githubusercontent.com/36924807/113653439-69f19e00-96c8-11eb-81bb-b2813e8a0ce7.png)
 
-![步驟6：進入某一檔案，綠色表示有被測試到程式碼，紅色表示沒有被測試到](https://user-images.githubusercontent.com/36924807/113653460-737b0600-96c8-11eb-9a89-93e810ed1574.jpeg)
+![步驟7：進入某一檔案，綠色表示有被測試到程式碼，紅色表示沒有被測試到](https://user-images.githubusercontent.com/36924807/113653460-737b0600-96c8-11eb-9a89-93e810ed1574.jpeg)
 
 ## 100% Coverage?
 * 100％的覆蓋率並不是我們主要的目標，至少確認重要的邏輯已經被測試。
