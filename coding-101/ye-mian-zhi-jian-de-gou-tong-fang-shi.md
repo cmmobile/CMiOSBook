@@ -210,6 +210,14 @@ class KVOTest {
         offsetToObserve.update(value)
     }
     ......   
+    
+    ......
+    /// 停止觀察時要呼叫
+    func removeObserver() {
+        observation?.invalidate()
+        observation = nil
+    }
+    ......   
 
 }
 ```
