@@ -58,7 +58,7 @@ private func setDataSet(enties: [CandleChartDataEntry]) -> CandleChartDataSet {
 }
 ```
 
-![](../.gitbook/assets/jie-tu-20200703-xia-wu-12.07.15%20%281%29.png)
+![](../.gitbook/assets/jie-tu-20200703-xia-wu-12.07.15%20%281%29%20%281%29.png)
 
 ### 3.DataSet轉換成ChartData
 

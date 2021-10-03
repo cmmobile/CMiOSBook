@@ -4,14 +4,14 @@ description: 學習如何解決多頁面傳遞資料的問題、或是包裝Mode
 
 # 物件之間的溝通方式
 
-#### 當開始拆分架構時會有很多情境：
+## 當開始拆分架構時會有很多情境：
 
 * 拆分成 ViewController 和 View
 * 拆分大 View 和 小View
 * 拆分成 ViewController 和 Model
 * 拆分成 ViewController 和 ViewModel / DataManager
 
-#### 兩個類別之間傳遞資料，解法有以下方式：
+## 兩個類別之間傳遞資料，解法有以下方式：
 
 * Property
   * 單向持有還OK，例如：ViewController 擁有 View
@@ -210,7 +210,7 @@ class KVOTest {
         offsetToObserve.update(value)
     }
     ......   
-    
+
     ......
     /// 停止觀察時要呼叫
     func removeObserver() {
