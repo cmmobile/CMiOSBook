@@ -15,27 +15,34 @@ description: 需要一位服裝審核員幫我們檢驗，程式碼是否有依�
 
 ### 安裝方法
 
-* 第一步：專案初始化pod \(請事先電腦安裝過 [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)\)
+* 第一步：在終端機輸入下方指令
+
+  專案初始化pod \(請事先電腦安裝過 [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)\)
 
 ```text
 pod init
 ```
 
-* 第二步：設定PodFile，並且pod install
-  * 開啟專案內的PodFile裡加入下面程式碼
+* 第二步：設定PodFile，開啟專案內的 PodFile 檔案加入下面程式碼
 
 ```text
 pod 'SwiftLint'
 ```
 
-* 第三步：設定Build Phases
+* 第三步：在終端機輸入下方指令，安裝三方
+
+```text
+pod install
+```
+
+* 第四步：設定Build Phases
   * 開啟專案內設定Build Phases &gt; 按 “＋” &gt; RunScript &gt; 輸入下方腳本
 
 ```text
 "${PODS_ROOT}/SwiftLint/swiftlint" lint --config "${SRCROOT}/swiftlint.yml"
 ```
 
-* 第四步：放入規則設定檔
+* 第五步：放入規則設定檔
   * 放在專案的根目錄，叫做"swiftlint.yml"
 
 {% file src="../.gitbook/assets/swiftlint \(1\).yml" %}
