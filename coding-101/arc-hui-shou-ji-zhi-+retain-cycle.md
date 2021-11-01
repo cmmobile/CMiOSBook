@@ -10,7 +10,7 @@ description: 理解程式是如何管控記憶體並且正確地操作物件，�
   * [Automatic Reference Counting](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
   * [Swift Retain Cycle](https://ithelp.ithome.com.tw/articles/10196788)
 * 範例連結：
-  * [iOS\_RetainCycleProject](https://github.com/cmmobile/iOS_RetainCycleProject)
+  * [iOS\_RetainCycleProject](https://github.com/cmmobile/iOS\_RetainCycleProject)
 
 ## 如何找Retain Cycle
 
@@ -67,16 +67,26 @@ class Macbook {
 ### 情境二：Delegate和Protocol，加上weak即可!!!
 
 ```swift
-protocol DataManagerDelegate: class {
+protocol DataManagerDelegate: AnyObject {
     func didGetData()
 }
-
 class DataManager{
-
     weak var delegate: DataManagerDelegate? // <----- 必須加上weak才可以被釋放
     func getData(){
         delegate?.didGetData()
     }
+}
+
+class ViewContorller: UIViewController{
+      private var dataManager = DataManager()
+      override func viewDidLoad() {
+        super.viewDidLoad()
+        dataManager.delegate = self
+        dataManager.getData()
+    }
+}
+extension ViewContorller: DataManagerDelegate{
+    func didGetData(){ ... }
 }
 ```
 
@@ -113,4 +123,3 @@ class TestClosure2ViewController: UIViewController {
     
 }
 ```
-
